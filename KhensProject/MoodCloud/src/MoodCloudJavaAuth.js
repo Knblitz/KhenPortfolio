@@ -1,1 +1,0 @@
-//MoodCloudJavaAuth.js
