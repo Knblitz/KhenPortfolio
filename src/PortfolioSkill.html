@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Skills  - Khen's Portfolio</title>
+  <title>Skills - Khen's Portfolio</title>
   <link rel="stylesheet" href="PortfolioStyle.css" />
-      <link rel="stylesheet" href="PortfolioRespondStyle.css" />
-
+  <link rel="stylesheet" href="PortfolioRespondStyle.css" />
+  <link rel="stylesheet" href="PortfolioSkillStyle.css" /> 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
 </head>
 <body class="SkillPage">
    <header>
@@ -16,14 +15,12 @@
       <h1 class="logo">Khen's Portfolio</h1>
       <nav>
         <ul class="nav-links">
-          <li><a href="PortfolioIndex.html" class="active">Home</a></li>
+          <li><a href="PortfolioIndex.html">Home</a></li>
           <li><a href="PortfolioAbout.html">About</a></li>
-          <li><a href="PortfolioSkill.html">Skills</a></li>
+          <li><a href="PortfolioSkill.html" class="active">Skills</a></li>
           <li><a href="PortfolioProject.html">Projects</a></li>
           <li><a href="PortfolioContact.html">Contact</a></li>
-          <li>
           <li><button id="mode-toggle" aria-label="Toggle light/dark mode">🌙/☀️</button></li>
-          </li>
         </ul>
       </nav>
       <div class="hamburger" onclick="toggleMenu()">
@@ -32,28 +29,25 @@
     </div>
   </header>
 
-  <!-- Gradient from nav to home/intro section -->
-  <section class="section-gradient"></section>
 
-  <!-- Education and Work Experience -->
-  <section class="section-borderless">
-    <div class="container resume-section">
-      <h2></h2>
+  <section class="resume-detail-section">
+    <div class="container resume-section-container">
+      <h2>Academic & Professional Summary</h2>
+      <p class="section-description">A snapshot of my educational background, work experience, and notable achievements.</p>
+      
       <div class="resume-flex-container">
-        <!-- Education -->
         <div class="resume-block">
           <h3><i class="fas fa-graduation-cap"></i> Education</h3>
           <ul>
             <li>
-               <strong>Institute of Technical Education East</strong><br>
-    3 Yr Higher Nitec in IT Application Development 
-    <br>
-
-              <em>2023-2025</em>
-              <ul>
-                <li>- <b>Entrepreneur Club:</b> Exco member (2024-2025)</li>
-                <li>- Student Mentor (2024)</li>
-              </ul>
+                <strong>Institute of Technical Education East</strong><br>
+                3 Yr Higher Nitec in IT Application Development 
+                <br>
+                <em>2023-2025</em>
+                <ul>
+                  <li>- <b>Entrepreneur Club:</b> Exco member (2024-2025)</li>
+                  <li>- Student Mentor (2024)</li>
+                </ul>
             </li>
             <li>
               <strong>Bedok Green Secondary School</strong><br>
@@ -65,14 +59,14 @@
                 <li>- <b>NCC:</b> Staff Sergeant (2022) & <b>PDS</b> (2021-2022)</li>
                 <li>- Class Vice Chairperson (2022)</li>
                 <li>- Peer Support Leader (2019)</li>
- <input type="button" value="View Testimonial" class="certificates-button" onclick="window.open('https://drive.google.com/drive/folders/1NhxBctPTR2YN_pI9BsklfiwoWanjIAAr?usp=sharing', '_blank')" />
-
+                <button onclick="window.open('https://drive.google.com/drive/folders/1NhxBctPTR2YN_pI9BsklfiwoWanjIAAr?usp=sharing', '_blank')" class="certificates-button">
+                    View Testimonial
+                </button>
               </ul>
             </li>
           </ul>
         </div>
 
-        <!-- Work Experience -->
         <div class="resume-block">
           <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
           <ul>
@@ -83,7 +77,6 @@
               <ul>
                 <li>Collaborated in a team to build web apps with HTML, CSS, JavaScript, and Airbase in VS Code.</li>
                 <li>Utilise QGIS to do data checks on building status and outline ,with Excel and Google Map</li>
-
                 <li>Contributed in UI/UX for a routing map project that uses OneMap’s API for visualizing BFA paths between Point A to Point B.</li>
                 <li>Designed the UI for the BFA Tourist Planner Project as a sidequest.</li>
               </ul>
@@ -104,17 +97,15 @@
         </div>
       </div>
 
-      <!-- Achievements and Skills -->
-      <div class="resume-flex-container achievements-skills-container">
-        <!-- Achievements -->
-        <div class="achievements-block">
+      <div class="resume-flex-container achievements-container">
+        <div class="achievements-block full-width-block"> 
           <h3><i class="fas fa-trophy"></i> Awards & Certificate</h3>
           <a href="https://drive.google.com/drive/folders/1NhxBctPTR2YN_pI9BsklfiwoWanjIAAr?usp=drive_link" 
           target="_blank" 
           class="certificates-button">
             View Awards & Certificates
           </a>
-          <ul class="resume-list">
+          <ul class="resume-list awards-list">
             <b>ITE College East (2023-2025)</b>
             <li>- Centennial Fund Award (2025)</li>
             <li>- Director's List (2024)</li>
@@ -131,76 +122,100 @@
             <li>- Google IT Support</li>
             <li>- Google Cybersecurity</li>
             <li>- Google Digital marketing & E-connerce</li>
-
-
           </ul>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Vertical Line -->
-        <div class="vertical-line"></div>
-          <!-- Skills -->
-          <div class="skills-block">
-            <h3><i class="fas fa-tools"></i> Skills</h3>
-            <div class="skills-category">
-              <h4>Languages for Coding</h4>
-              <ul class="skills-list">
-                <li>Python</li>
-                <li>JavaScript</li>
-                <li>HTML & CSS</li>
-              </ul>
+  <section class="skills-section">
+    <div class="container skills-container">
+      <h2>Technical Toolbox & Strengths</h2>
+      <p class="section-description">A detailed list of the languages, software, and soft skills I use daily.</p>
+      
+      <div class="skills-grid">
+        <div class="skills-category">
+          <h4><i class="fas fa-code"></i> Coding Languages</h4>
+          <ul class="skills-list">
+            <li><i class="fas fa-file-code"></i> Python</li>
+            <li><i class="fas fa-code"></i> JavaScript</li>
+            <li><i class="fas fa-laptop-code"></i> HTML & CSS</li>
+          </ul>
+        </div>
+        
+        <div class="skills-category">
+          <h4><i class="fas fa-desktop"></i> Software & Tools</h4>
+          <ul class="skills-list">
+            <li><i class="fab fa-microsoft"></i> Visual Studio </li>
+            <li><i class="fas fa-palette"></i> Canva</li>
+            <li><i class="fas fa-video"></i> Capcut</li>
+               <li><i class="fab fa-adobe"></i> Adobe XD</li>
+            <li><i class="fab fa-adobe"></i> Adobe Dreamweaver</li>
+            <li><i class="fab fa-adobe"></i> Adobe illustrator</li>
+            <li><i class="fas fa-camera"></i> Adobe Lightroom</li>
+                          <li><i class="fab fa-adobe"></i> Adobe Photoshop</li>
+
+              <div class="hidden-skill">
+            <li><i class="fas fa-map-marked-alt"></i> QGIS</li>
+            <li><i class="fas fa-globe-asia"></i> ArcGIS</li>
+             
             </div>
-            <div class="skills-category">
-              <h4> Software</h4>
-              <ul class="skills-list">
-                <li>Visual Studio </li>
-                <li>Canva</li>
-                <li>Capcut</li>
-                <li>Adobe Photoshop</li>
-                <li>Adobe XD</li>
-                <li>Adobe Dreamweaver</li>
-                <li>Adobe illustrator</li>
-                <li>Adobe Lightroom</li>
-                <li>QGIS</li>
-                <li>ArcGIS</li>
-              </ul>
+          </ul>
+                    <button type="button" id="toggle-skills-btn" data-expanded="false" class="view-more-button">View More ></button>
+
+        </div>
+
+        <div class="skills-category soft-skills">
+          <h4><i class="fas fa-user-friends"></i> Soft Skills</h4>
+          <ul class="skills-list">
+            <li><i class="fas fa-users"></i> Team Collaboration</li>
+            <li><i class="fas fa-puzzle-piece"></i> Problem Solving</li>
+            <li><i class="fas fa-clock"></i> Time Management</li>
+            <li><i class="fas fa-user-tie"></i> Leadership</li>
+             <li><i class="fas fa-adjust"></i> Adaptability</li>
+              <li><i class="fas fa-lightbulb"></i> Critical Thinking</li>
+              <li><i class="fas fa-pencil-ruler"></i> Creativity</li>
+            <div class="hidden-skill">
+             
+              <li><i class="fas fa-handshake"></i> Conflict Resolution</li>
+              <li><i class="fas fa-headset"></i> Customer Service</li>
+              <li><i class="fas fa-chart-line"></i> Entrepreneurship</li>
+              <li><i class="fas fa-comment-dots"></i> Communication</li>
+              <li><i class="fas fa-people-group"></i> Teamwork</li>
             </div>
-           <!--
-<div class="skills-category">
-  <h4>Geospatial </h4>
-  <ul class="skills-list">
-    <li>QGIS</li>
-    <li>ArcGIS</li>
-  </ul>
-</div>
--->
-            <div class="skills-category">
-              <h4>Miscellaneous</h4>
-              <ul class="skills-list">
-                <!-- Always visible skills -->
-                <li>Team Collaboration</li>
-                <li>Problem Solving</li>
-                <li>Time Management</li>
-                <li>Leadership</li>
-            
-                <!-- Hidden skills -->
-                <div class="hidden-skill">
-                  <li>Adaptability</li>
-                  <li>Critical Thinking</li>
-                  <li>Creativity</li>
-                  <li>Conflict Resolution</li>
-                  <li>Customer Service</li>
-                  <li>Entrepreneurship</li>
-                  <li>Communication</li>
-                  <li>Teamwork</li>
-                </div>
-              </ul>
-              <input type="button" id="toggle-skills-btn" data-expanded="false" value="View More >" />
-            </div>
+          </ul>
+          <button type="button" id="toggle-skills-btn" data-expanded="false" class="view-more-button">View More ></button>
         </div>
       </div>
-    </section>
-    <!-- Footer Section -->
-<footer id="footer" class="footer-gradient">
+    </div>
+  </section>
+ <!-- update Patchnote Version -->
+
+<div id="patchnote-badge" class="patchnote-badge">
+    v3.0.0
+</div>
+
+<div id="patchnote-popup" class="patchnote-popup">
+    <div class="patchnote-popup-title">Patchnotes v2.0.0</div>
+    <ul class="patchnote-popup-list">
+        <li>Added Patchnotes</li>
+        
+        </ul>
+    <button id="view-full-patchnote" class="patchnote-popup-button patchnote-popup-button-secondary">View full changelog</button>
+    <button id="close-patchnote" class="patchnote-popup-button patchnote-popup-button-primary">Close</button>
+</div>
+
+<div id="full-patchnote-overlay" class="patchnote-glass-overlay">
+    
+    <div id="patchnote-full-popup" class="patchnote-full-popup">
+        <button id="close-full-patchnote" class="patchnote-popup-button patchnote-popup-button-primary patchnote-full-popup-close-btn">Close</button>
+        
+        <div id="patchnote-full-content"></div>
+    </div>
+
+</div>
+ <!-- Footer -->
+  <footer id="footer" class="footer-gradient">
   <div class="container footer-container">
     <p>&copy; 2025 Khen's Portfolio. All rights reserved.</p>
   </div>
