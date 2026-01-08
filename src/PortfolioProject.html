@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects - Khen's Portfolio</title>
+  <link rel="stylesheet" href="PortfolioStyle.css" />
+  <link rel="stylesheet" href="PortfolioRespondStyle.css" />
+  <link rel="stylesheet" href="PortfolioProjectStyle.css" /> 
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body class="Project">
+  <header>
+    <div class="navcontainer">
+      <h1 class="logo">Khen's Portfolio</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="PortfolioIndex.html">Home</a></li>
+          <li><a href="PortfolioAbout.html">About</a></li>
+          <li><a href="PortfolioSkill.html">Skills</a></li>
+          <li><a href="PortfolioProject.html" class="active">Projects</a></li>
+          <li><a href="PortfolioContact.html">Contact</a></li>
+          <li><button id="mode-toggle" aria-label="Toggle light/dark mode">🌙/☀️</button></li>
+        </ul>
+      </nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="project-section">
+    <div class="container project-container">
+      <h2 class="project-title">My Projects</h2>
+      <p class="project-subtitle">A collection of academic and personal work showcasing my development and design skills.</p>
+      
+      <div class="project-toolbar">
+        <button id="list-view" class="active" aria-label="List View"><i class="fas fa-list"></i> List</button>
+        <button id="grid-view" aria-label="Grid View"><i class="fas fa-th-large"></i> Grid</button>
+      </div>
+
+      <div class="project-list" id="project-list-container">
+               <!-- BFA Tourist Planner -->
+        <div class="project">
+          <div class="project-img-container">
+            <img src="../images/OneMapTourist.png" alt="BFA Tourist Planner Screenshot" class="project-img">
+          </div>
+          <div class="project-info">
+            <h3>BFA Tourist Planner (SLA Task)</h3>
+            <p>Assigned during my internship, tasked with a web app built with HTML, CSS, and JavaScript that helps users create personalised tour itineraries based on preferences.</p>
+            <a href="#" target="_blank" class="project-link">Confidential</a>
+          </div>
+        </div>
+        <!-- MoodCloud -->
+        <div class="project">
+          <div class="project-img-container">
+            <img src="../images/MoodCloudpic1.png" alt="MoodCloud Screenshot" class="project-img">
+          </div>
+          <div class="project-info">
+            <h3>MoodCloud</h3>
+            <p>MoodCloud is a personal project built to create a safe, anonymous space for people to express their emotions. It lets users post their thoughts, receive uplifting messages, and access simple tools to support their mental well-being.</p>
+            <a href="https://knblitz.github.io/KhenProjects//MoodCloud/src/MoodCloudIndex.html" target="_blank" class="project-link">View Site</a>
+          </div>
+        </div>
+        <!-- StackUp -->
+        <div class="project">
+          <div class="project-img-container">
+            <img src="images/project3.jpg" alt="Stackup Screenshot" class="project-img">
+          </div>
+          <div class="project-info">
+            <h3>StackUp</h3>
+            <p>Side-Project to enhanced my skills</p>
+            <a href="#" target="_blank" class="project-link">W.I.P</a>
+          </div>
+        </div>
+        <!-- EWD Module Project -->
+        <div class="project">
+          <div class="project-img-container">
+            <img src="https://via.placeholder.com/380x240?text=No+Image" alt="No image available" class="project-img">
+          </div>
+          <div class="project-info">
+            <h3>Full-Stack E-commerce Platform (MVC & SQL Server)</h3>
+            <p>My Enterprise Web Development (EWD) module final project. This comprehensive, 
+              full-stack e-commerce site for collectibles was engineered by me using the MVC architectural pattern and SQL Server. 
+              It demonstrates end-to-end proficiency in enterprise development, 
+              from database normalization to secure user authentication and shopping cart management.
+</p>
+            <a href="#" target="_blank" class="project-link">TBC</a>
+          </div>
+        </div>
+           <!-- MAD Module Project -->
+        <div class="project">
+          <div class="project-img-container">
+            <img src="../images/GpaCalculatorPic.png" alt="No image available" class="project-img">
+          </div>
+          <div class="project-info">
+            <h3>Flutter GPA Calculator (MAD Module Project)</h3>
+            <p>My final project for my Mobile App Development (MAD) module was a Flutter GPA Calculator. This app allows users to input their grades and calculate their GPA in a user-friendly interface.</p>
+            <a href="https://knblitz.github.io/GpaCalculator/" target="_blank" class="project-link">Visit Site</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+ <!-- Footer -->
+  <footer id="footer" class="footer-gradient">
+    <div class="container footer-container">
+      <p>&copy; 2025 Khen's Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="PortfolioJava.js"></script>
+
+</body>
+</html>

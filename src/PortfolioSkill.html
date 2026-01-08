@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills - Khen's Portfolio</title>
+  <link rel="stylesheet" href="PortfolioStyle.css" />
+  <link rel="stylesheet" href="PortfolioRespondStyle.css" />
+  <link rel="stylesheet" href="PortfolioSkillStyle.css" /> 
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body class="SkillPage">
+   <header>
+    <div class="navcontainer">
+      <h1 class="logo">Khen's Portfolio</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="PortfolioIndex.html">Home</a></li>
+          <li><a href="PortfolioAbout.html">About</a></li>
+          <li><a href="PortfolioSkill.html" class="active">Skills</a></li>
+          <li><a href="PortfolioProject.html">Projects</a></li>
+          <li><a href="PortfolioContact.html">Contact</a></li>
+          <li><button id="mode-toggle" aria-label="Toggle light/dark mode">🌙/☀️</button></li>
+        </ul>
+      </nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="resume-detail-section">
+    <div class="container resume-section-container">
+      <h2>Academic & Professional Summary</h2>
+      <p class="section-description">A snapshot of my educational background, work experience, and notable achievements.</p>
+      
+      <div class="resume-flex-container">
+        <div class="resume-block">
+          <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+          <ul>
+            <li>
+                <strong>Institute of Technical Education East</strong><br>
+                3 Yr Higher Nitec in IT Application Development 
+                <br>
+                <em>2023-2025</em>
+                <ul>
+                  <li>- <b>Entrepreneur Club:</b> Exco member (2024-2025)</li>
+                  <li>- Student Mentor (2024)</li>
+                </ul>
+            </li>
+            <li>
+              <strong>Bedok Green Secondary School</strong><br>
+              GCE O-Level (Mathematics) & N-Level (Normal Academic)
+              <br>
+              <em>2019-2022</em>
+
+              <ul>
+                <li>- <b>NCC:</b> Staff Sergeant (2022) & <b>PDS</b> (2021-2022)</li>
+                <li>- Class Vice Chairperson (2022)</li>
+                <li>- Peer Support Leader (2019)</li>
+                <button onclick="window.open('https://drive.google.com/drive/folders/1NhxBctPTR2YN_pI9BsklfiwoWanjIAAr?usp=sharing', '_blank')" class="certificates-button">
+                    View Testimonial
+                </button>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="resume-block">
+          <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
+          <ul>
+            <li>
+              <strong>Singapore Land Authority</strong> — GeoSpatial Internship
+              <br>
+              <em>July 2024 – June 2025</em>
+              <ul>
+                <li>Collaborated in a team to build web apps with HTML, CSS, JavaScript, and Airbase in VS Code.</li>
+                <li>Utilise QGIS to do data checks on building status and outline ,with Excel and Google Map</li>
+                <li>Contributed in UI/UX for a routing map project that uses OneMap’s API for visualizing BFA paths between Point A to Point B.</li>
+                <li>Designed the UI for the BFA Tourist Planner Project as a sidequest.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Buddy Hoagies Simei</strong> — Part-Time Service Crew
+              <br>
+              <em>July 2024 – Present</em>
+              <ul>
+                <li>Provided warm and attentive customer service.</li>
+                <li>Accurately recorded food & beverage orders.</li>
+                <li>Processed transactions efficiently while ensuring accuracy.</li>
+                <li>Collaborated with team members to ensure smooth operations.</li>
+                <li>Addressed customer inquiries and resolved concerns professionally.</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="resume-flex-container achievements-container">
+        <div class="achievements-block full-width-block"> 
+          <h3><i class="fas fa-trophy"></i> Awards & Certificate</h3>
+          <a href="https://drive.google.com/drive/folders/1NhxBctPTR2YN_pI9BsklfiwoWanjIAAr?usp=drive_link" 
+          target="_blank" 
+          class="certificates-button">
+            View Awards & Certificates
+          </a>
+          <ul class="resume-list awards-list">
+            <b>ITE College East (2023-2025)</b>
+            <li>- Centennial Fund Award (2025)</li>
+            <li>- Director's List (2024)</li>
+            <b>Bedok Green Secondary School (2019-2022)</b>
+            <li>- Edusave Award for Achievement, Good Leadership and Service (EAGLES) 2022</li>
+            <li>- Edusave Certificate of Academic Achievement 2022</li>
+            <li>- Edusave Scholarship 2021</li>
+            <li>- Edusave Scholarship 2020</li>
+            <li>- Top in Subject: Design & Technology 2020</li>
+            <li>- Edusave Scholarship 2019</li>
+
+            <b>Coursera</b>
+            <li>- Google UI/UX</li>
+            <li>- Google IT Support</li>
+            <li>- Google Cybersecurity</li>
+            <li>- Google Digital marketing & E-connerce</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="skills-section">
+    <div class="container skills-container">
+      <h2>Technical Toolbox & Strengths</h2>
+      <p class="section-description">A detailed list of the languages, software, and soft skills I use daily.</p>
+      
+      <div class="skills-grid">
+        <div class="skills-category">
+          <h4><i class="fas fa-code"></i> Coding Languages</h4>
+          <ul class="skills-list">
+            <li><i class="fas fa-file-code"></i> Python</li>
+            <li><i class="fas fa-code"></i> JavaScript</li>
+            <li><i class="fas fa-laptop-code"></i> HTML & CSS</li>
+          </ul>
+        </div>
+        
+        <div class="skills-category">
+          <h4><i class="fas fa-desktop"></i> Software & Tools</h4>
+          <ul class="skills-list">
+            <li><i class="fab fa-microsoft"></i> Visual Studio </li>
+            <li><i class="fas fa-palette"></i> Canva</li>
+            <li><i class="fas fa-video"></i> Capcut</li>
+               <li><i class="fab fa-adobe"></i> Adobe XD</li>
+            <li><i class="fab fa-adobe"></i> Adobe Dreamweaver</li>
+            <li><i class="fab fa-adobe"></i> Adobe illustrator</li>
+            <li><i class="fas fa-camera"></i> Adobe Lightroom</li>
+                          <li><i class="fab fa-adobe"></i> Adobe Photoshop</li>
+
+              <div class="hidden-skill">
+            <li><i class="fas fa-map-marked-alt"></i> QGIS</li>
+            <li><i class="fas fa-globe-asia"></i> ArcGIS</li>
+             
+            </div>
+          </ul>
+                    <button type="button" id="toggle-skills-btn" data-expanded="false" class="view-more-button">View More ></button>
+
+        </div>
+
+        <div class="skills-category soft-skills">
+          <h4><i class="fas fa-user-friends"></i> Soft Skills</h4>
+          <ul class="skills-list">
+            <li><i class="fas fa-users"></i> Team Collaboration</li>
+            <li><i class="fas fa-puzzle-piece"></i> Problem Solving</li>
+            <li><i class="fas fa-clock"></i> Time Management</li>
+            <li><i class="fas fa-user-tie"></i> Leadership</li>
+             <li><i class="fas fa-adjust"></i> Adaptability</li>
+              <li><i class="fas fa-lightbulb"></i> Critical Thinking</li>
+              <li><i class="fas fa-pencil-ruler"></i> Creativity</li>
+            <div class="hidden-skill">
+             
+              <li><i class="fas fa-handshake"></i> Conflict Resolution</li>
+              <li><i class="fas fa-headset"></i> Customer Service</li>
+              <li><i class="fas fa-chart-line"></i> Entrepreneurship</li>
+              <li><i class="fas fa-comment-dots"></i> Communication</li>
+              <li><i class="fas fa-people-group"></i> Teamwork</li>
+            </div>
+          </ul>
+          <button type="button" id="toggle-skills-btn" data-expanded="false" class="view-more-button">View More ></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Footer -->
+  <footer id="footer" class="footer-gradient">
+  <div class="container footer-container">
+    <p>&copy; 2025 Khen's Portfolio. All rights reserved.</p>
+  </div>
+</footer>
+<script src="PortfolioJava.js"></script>
+
+</body>
+</html>

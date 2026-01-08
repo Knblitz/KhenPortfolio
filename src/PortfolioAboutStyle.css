@@ -1,0 +1,325 @@
+/*
+ * PortfolioAboutStyle.css
+ * Dedicated styles for the About page (PortfolioAbout.html)
+ * Uses variables from PortfolioStyle.css
+ */
+
+/* === ABOUT SECTION STYLES === */
+.about-section {
+    padding: 80px 0;
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column; /* Mobile-first: stack image and text */
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Desktop layout: Image and Text side-by-side */
+@media (min-width: 900px) {
+    .about-container {
+        flex-direction: row;
+        text-align: left;
+    }
+}
+
+.about-image {
+    flex-shrink: 0;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    /* Uses the hover shadow for a more pronounced border effect */
+    box-shadow: var(--box-shadow-hover); 
+    transition: box-shadow 0.3s ease;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+.about-text {
+    flex-grow: 1;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    /* Subtle separation line */
+    border-bottom: 2px solid var(--border-color); 
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.about-text strong {
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+
+/* ---------------------------------------------------- */
+/* === TIMELINE SECTION STYLES (Education/Experience) === */
+/* ---------------------------------------------------- */
+
+.timeline-section {
+    padding: 60px 0 80px 0;
+    /* Use block color for cards background, contrasting with the main page background */
+    background-color: var(--block-background); 
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+.timeline-title {
+    color: var(--text-color);
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* The vertical connecting line: Uses the Primary/Border Color (Green/Teal) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--border-color); 
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    transition: background-color 0.3s;
+}
+
+/* Container for all events */
+.timeline-event {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    transition: all 0.5s ease;
+}
+
+/* Content boxes */
+.timeline-content {
+    padding: 20px 30px;
+    /* Card background: uses section-background which is typically lighter than block-background in dark mode */
+    background-color: var(--section-background); 
+    position: relative;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    text-align: left;
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+.timeline-event:hover .timeline-content {
+    box-shadow: var(--box-shadow-hover); /* Depth on hover */
+}
+
+/* Title: Uses Primary Color (Green/Teal) */
+.timeline-content h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+.timeline-year {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--dark-gray);
+    margin-bottom: 15px;
+}
+
+.timeline-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.timeline-content li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+/* Checkmark icon for list items: Uses Primary Color (Green/Teal) */
+.timeline-content li::before {
+    content: "\f00c"; /* Check icon from Font Awesome */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--primary-color); 
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Bold text: Uses Primary Color (Green/Teal) */
+.timeline-content b {
+    color: var(--primary-color); 
+    font-weight: 700;
+}
+
+/* Circles on the timeline: Uses Primary Color (Green/Teal) */
+.timeline-circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border: 4px solid var(--block-background); /* Creates a distinct ring */
+    top: 35px;
+    border-radius: 50%;
+    z-index: 10; /* Ensure the circle is on top of the line */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Event on the left side */
+.timeline-event.left {
+    left: 0;
+}
+/* Arrow pointing to the line from the left content box */
+.timeline-event.left .timeline-content::after {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 32px;
+    right: -15px;
+    border: medium solid var(--section-background);
+    border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent var(--section-background);
+}
+/* Adjust circle position for left side (centered on the line) */
+.timeline-event.left .timeline-circle {
+    left: 50%;
+    transform: translateX(-50%);
+    right: unset;
+}
+
+/* Event on the right side */
+.timeline-event.right {
+    left: 50%;
+}
+/* Arrow pointing to the line from the right content box */
+.timeline-event.right .timeline-content::after {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 32px;
+    left: -15px;
+    border: medium solid var(--section-background);
+    border-width: 10px 15px 10px 0;
+    border-color: transparent var(--section-background) transparent transparent;
+}
+/* Adjust circle position for right side (centered on the line) */
+.timeline-event.right .timeline-circle {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Timeline Tags */
+.timeline-tags {
+    margin-bottom: 10px;
+}
+
+.timeline-tags .tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--hover-color); /* White text for tags */
+}
+
+.tag.school {
+    background-color: blue;
+}
+.tag.project {
+    background-color: red;
+}
+.tag.internship{
+    background-color: orange;
+}
+.tag.work {
+    background-color: pink;
+}
+.tag.future {
+    background-color: green;
+}
+/* === MEDIA QUERIES (RESPONSIVENESS) === */
+
+@media (max-width: 768px) {
+    /* Timeline styles for mobile (single column) */
+    .timeline::after {
+        left: 20px; /* Move vertical line to the left */
+    }
+
+    .timeline-event {
+        width: 100%;
+        padding-left: 50px; /* Space for the line and circle */
+        padding-right: 10px;
+    }
+
+    /* All events align to the left */
+    .timeline-event.left,
+    .timeline-event.right {
+        left: 0;
+    }
+
+    /* Adjust the circle positions */
+    .timeline-event.left .timeline-circle,
+    .timeline-event.right .timeline-circle {
+        left: 20px; /* Align circle to the new line position */
+        transform: translateX(-50%);
+    }
+    
+    /* Remove the arrow on the content box for better mobile flow */
+    .timeline-event.left .timeline-content::after,
+    .timeline-event.right .timeline-content::after {
+        display: none;
+    }
+    
+    .timeline-event.left .timeline-content {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    /* About section image/text stack adjustments */
+    .about-image {
+        width: 200px;
+        height: 200px;
+    }
+    .about-text h2 {
+        font-size: 2rem;
+    }
+    .about-text p {
+        font-size: 1rem;
+    }
+}

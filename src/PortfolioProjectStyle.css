@@ -1,0 +1,192 @@
+/*
+ * PortfolioProjectStyle.css
+ * Dedicated styles for the Projects page (PortfolioProject.html)
+ * Uses variables from PortfolioStyle.css
+ */
+
+/* ---------------------------------------------------- */
+/* === PROJECTS SECTION STYLES === */
+/* ---------------------------------------------------- */
+
+.project-section {
+    padding: 60px 20px;
+    background-color: var(--background-color);
+    transition: background-color 0.3s ease;
+}
+
+.project-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.project-subtitle {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* === Toolbar and Toggle Buttons === */
+.project-toolbar {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.project-toolbar button {
+    background-color: var(--block-background);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.project-toolbar button.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--hover-color); /* Light text on primary background */
+}
+
+.project-toolbar button:hover:not(.active) {
+    background-color: var(--section-background);
+    color: var(--primary-color);
+}
+
+
+/* === Project List Container - Default (List View) === */
+.project-list {
+    display: flex;
+    flex-direction: column; /* Stacks projects vertically */
+    gap: 30px;
+}
+
+/* === Individual Project Card Styling (List View) === */
+.project {
+    background-color: var(--section-background);
+    border-radius: 12px;
+    padding: 25px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.project:hover {
+    box-shadow: var(--box-shadow-hover);
+    transform: translateY(-2px);
+}
+
+.project-img-container {
+    flex-shrink: 0; /* Prevents image container from shrinking */
+    width: 250px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.project-info {
+    flex-grow: 1;
+}
+
+.project-info h3 {
+    color: var(--secondary-color);
+    font-size: 1.7rem;
+    margin-bottom: 5px;
+}
+
+.project-info p {
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: var(--hover-color);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.project-link:hover {
+    background-color: var(--highlight-color);
+}
+
+
+/* ----------------------------------------------------
+   Grid View (Activated by JS adding the .grid-view class)
+   ---------------------------------------------------- */
+.project-list.grid-view {
+    /* CRITICAL: Defines the grid layout */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-list.grid-view .project {
+    /* Stacks elements vertically within the card */
+    flex-direction: column; 
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    gap: 15px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--block-background);
+    /* Removes the list separator line */
+    border-bottom: none; 
+}
+.project-list.grid-view .project-img-container {
+    /* Ensures the image fills the card width */
+    flex: none;
+    width: 100%; 
+    max-height: 200px;
+}
+.project-list.grid-view .project-info {
+    padding: 0 5px;
+}
+/* === Responsive Adjustments === */
+@media (max-width: 768px) {
+    /* Force List view stacking on small screens regardless of button state */
+    .project {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .project-img-container {
+        width: 100%;
+        height: 180px;
+        margin-bottom: 15px;
+    }
+
+    .project-list {
+        grid-template-columns: 1fr; /* Single column */
+    }
+
+    .project-toolbar {
+        justify-content: center;
+    }
+}

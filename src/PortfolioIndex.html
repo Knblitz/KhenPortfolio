@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - Khen's Portfolio</title>
+  <link rel="stylesheet" href="PortfolioStyle.css" />
+  <link rel="stylesheet" href="PortfolioRespondStyle.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body class="Index">
+  <header>
+    <div class="navcontainer">
+      <h1 class="logo">Khen's Portfolio</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="PortfolioIndex.html" class="active">Home</a></li>
+          <li><a href="PortfolioAbout.html">About</a></li>
+          <li><a href="PortfolioSkill.html">Skills</a></li>
+          <li><a href="PortfolioProject.html">Projects</a></li>
+          <li><a href="PortfolioContact.html">Contact</a></li>
+          <li><button id="mode-toggle" aria-label="Toggle light/dark mode">🌙/☀️</button></li>
+        </ul>
+      </nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </header>
+
+<section id="home" class="section-borderless">
+  <div class="container home-container">
+    <div class="home-image">
+      <img src="../images/ProfilePic1.jpg" alt="Profile Image" class="profile-circular-border" />
+    </div>
+    <div class="home-text">
+      <h2>Hi, I'm Khen, a hands-on <strong>IT Application Developer</strong>.</h2>
+  <p>
+  My passion lies in <strong>web design</strong> and <strong>problem-solving</strong>. I specialize in creating functional, clean applications and am currently expanding my skills in <strong>digital art</strong>, <strong>AI tools</strong>, and <strong>automation</strong> to enhance user experience and streamline my workflow. I take pride in leading teams and turning ideas into life—like this portfolio.
+</p>
+<p>
+  I'm excited about exploring <strong>game development</strong> in the future, where I can combine my technical abilities with my growing interest in digital art and design.
+</p>
+      <div class="social-media-box">
+        <a href="https://www.linkedin.com/in/khen-thong-a1b853282/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="mailto:khenthongwk@gmail.com" target="_blank" aria-label="Email">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+      </div>
+
+<a href="../assets/Khen_CV.pdf" download class="download-cv-btn" aria-label="Download my CV">
+  <i class="fas fa-download"></i>
+  <span>Download CV</span>
+</a>
+
+    </div>
+  </div>
+</section>
+
+<section id="core-skills" class="section-borderless" style="padding-top: 0; padding-bottom: 40px;">
+    <div class="container" style="max-width: 1000px; padding: 0 20px;">
+        <h2 style="text-align: center; color: var(--secondary-color); margin-bottom: 20px;"><i class="fas fa-code"></i> Core Competencies</h2>
+        <div class="skills-showcase">
+            <span class="skill-badge">HTML & CSS</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">Web Design / UI/UX</span>
+            <span class="skill-badge">SQL (Database)</span>
+            <span class="skill-badge">C# / ASP.NET</span>
+            <span class="skill-badge">Git & GitHub</span>
+            <span class="skill-badge">Problem-Solving</span>
+            <span class="skill-badge">Team Leadership</span>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="IndexProject-section">
+  <div class="container">
+    <h2 class="IndexProject-title"><i class="fas fa-desktop"></i> Featured Projects</h2>
+    <p class="IndexProject-desc">
+      Here are some snippets of projects that I have done in school or during my internship. Visit the <a href="PortfolioProject.html">Projects page</a> for the full list.
+    </p>
+    
+    <div class="IndexProject-carousel-wrapper">
+        <button class="IndexProject-carousel-arrow prev" aria-label="Previous Project"><i class="fas fa-chevron-left"></i></button>
+        
+        <div class="IndexProject-carousel-container">
+                        <div class="IndexProject-carousel-track">
+                
+                <div class="IndexProject-card" data-index="0">
+                    <a href="PortfolioProject.html#MoodCloud" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                        <img class="project-image" src="../images/MoodCloudpic1.png" alt="MoodCloud Project" onerror="this.onerror=null;this.src='https://placehold.co/400x250/cccccc/333333?text=Image+Error';"/>
+                        <h3>MoodCloud</h3>
+                        <p>MoodCloud is a personal project focusing on data visualization and mood tracking for mental wellness.</p>
+                    </a>
+                </div>
+
+                <div class="IndexProject-card" data-index="1">
+                    <a href="PortfolioProject.html#StackUp" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                        <img class="project-image" src="../images/img2.jpg" alt="StackUp Project" onerror="this.onerror=null;this.src='https://placehold.co/400x250/cccccc/333333?text=Image+Error';"/>
+                        <h3>StackUp</h3>
+                        <p>StackUp is a robust cross-platform budgeting application developed using React Native and Firebase, featuring real-time synchronization.</p>
+                    </a>
+                </div>
+
+                <div class="IndexProject-card" data-index="2">
+                    <a href="PortfolioProject.html#BFATourist" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                        <img class="project-image" src="../images/OneMapTourist.png" alt="BFA Tourist Planner Project" onerror="this.onerror=null;this.src='https://placehold.co/400x250/cccccc/333333?text=Image+Error';"/>
+                        <h3>BFA Tourist Planner</h3>
+                        <p>Confidential project involving geospatial data analysis and route optimization for local tourism management.</p>
+                    </a>
+                </div>
+                
+                <div class="IndexProject-card" data-index="3">
+                    <a href="PortfolioProject.html#CollectorsCorner" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                        <img class="project-image" src="../images/img4.jpg" alt="Collectors Corner Project" onerror="this.onerror=null;this.src='https://placehold.co/400x250/cccccc/333333?text=Image+Error';"/>
+                        <h3>Collectors Corner (EWD Project)</h3>
+                        <p>CollectorsCorner is a full-stack e-commerce site built using ASP.NET MVC, designed for collectible figurines and authenticated users.</p>
+                    </a>
+                </div>
+
+                <div class="IndexProject-card" data-index="4">
+                    <a href="PortfolioProject.html#GpaCalculator" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+                        <img class="project-image" src="../images/GpaCalculatorPic.png" alt="GPA Calculator Project" onerror="this.onerror=null;this.src='https://placehold.co/400x250/cccccc/333333?text=Image+Error';"/>
+                        <h3>GPA Calculator (MAD Module Project)</h3>
+                        <p>This project is a Flutter application that allows users to input their grades and calculate their GPA.</p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="IndexProject-carousel-arrow next" aria-label="Next Project"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<section id="impact-highlights" class="section-borderless">
+    <div class="container" style="max-width: 1200px;">
+        <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 40px;"><i class="fas fa-trophy"></i> Impact & Involvement</h2>
+        <div class="impact-grid">
+            
+            <div class="impact-card">
+                <h3><i class="fas fa-graduation-cap"></i> Education & Academic Excellence</h3>
+                <p><strong>Institute of Technical Education (ITE) College East</strong> — 3Yr Higher Nitec in IT Application Development</p>
+                <em>2023-2025</em>
+                <ul>
+                    <li>Recipient of the <strong>Director's List</strong> (2024).</li>
+                    <li><strong>Entrepreneur Club's Exco member</strong> (2024-2025).</li>
+                    <li><strong>ITE ACE Programme Participant:</strong> (2023-2025)</li>
+                </ul>
+                <p><strong>Bedok Green Secondary School</strong> — GCE O/N-Level</p>
+                <em>2019-2022</em>
+                <ul>
+                    <li>Raw ELMAB3 Result:<strong>14 </strong></li>
+                    <li>Achieved NCC<strong> Staff Sergeant </strong>rank and part of <strong>Precision Drill Squad (PDS)</strong>.</li>
+                    <li>Sec 4 Class Vice Chairperson (2022)</li>
+                    <li>Member of Peer Support leader (2019)</li>
+                </ul>
+            </div>
+
+            <div class="impact-card">
+                <h3><i class="fas fa-users-cog"></i> Leadership & Initiative</h3>
+                <p>My key roles in managing, mentoring, and guiding teams to success:</p>
+                <ul>
+                    <li><strong>Entrepreneur Club EXCO Member:</strong> Managed club initiatives, ensuring smooth operations and event execution.</li>
+                    <li><strong>ITE Student Mentor:</strong> Provided guidance and support to fellow students in their academic journey.</li>
+                    <li><strong>ITE ACE Programme:</strong> Engaged in leadership training and received <strong>mentorship from industry partners</strong>.</li>
+                    <li><strong>NCC Staff Sergeant:</strong> Led a cohort of cadets, focusing on discipline and teamwork.</li>
+                    <li><strong>Sec4 Class Vice Chairperson:</strong> Co-managed class welfare, communications, and administrative duties.</li>
+                    <li><strong>Project Lead:</strong> Routinely assumed the lead role in group projects to ensure delivery and quality.</li>
+                </ul>
+            </div>
+
+            <div class="impact-card">
+                <h3><i class="fas fa-hand-holding-heart"></i> Community & Giving Back</h3>
+                <p>Committed to giving back and applying skills for social good:</p>
+                <ul>
+                    <li>Participated in community outreach programs through Entrepreneur Club.</li>
+                    <li><strong>ITE ACE Programme Community Service:</strong> Participated in projects like teaching senior citizens to use technology</li>
+                    <li>Engaged in environmental cleanup and awareness drives with school groups.</li>
+                    <li><strong>Mentored peers and juniors</strong>, fostering a positive learning environment and promoting digital literacy.</li>
+                    <li><strong>Peer Support Leader:</strong> Provided guidance and support to fellow students in need.</li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<section id="academic-awards" class="section-borderless2">
+  <div class="container">
+    <h3><i class="fas fa-award"></i> Academic Awards</h3>
+    <h4 class="award-category"></h4>
+    <div class="awards-grid">
+       <div class="award-card">
+        <img src="../images/ITE-Director List 2024.jpg" alt="Director's List 2024" />
+        <div class="award-desc">Director's List (2024)</div>
+      </div>
+      <div class="award-card">
+        <img src="../images/Edusave EAGLES 2022.jpg" alt="Edusave Award for Achievement, Good Leadership and Service (EAGLES) 2022" />
+        <div class="award-desc">Edusave Award for Achievement, Good Leadership and Service (EAGLES) 2022</div>
+      </div>
+      <div class="award-card">
+        <img src="../images/Edusave Certficate of Academic Achievement 2022.jpg" alt="Edusave Certificate of Academic Achievement 2022" />
+        <div class="award-desc">Edusave Certificate of Academic Achievement 2022</div>
+      </div>
+      <div class="award-card">
+        <img src="../images/Edusave Scholarship 2021.jpg" alt="Edusave Scholarship 2021" />
+        <div class="award-desc">Edusave Scholarship 2021</div>
+      </div>
+      <div class="award-card">
+        <img src="../images/Edusave Scholarship 2020.jpg" alt="Edusave Scholarship 2020" />
+        <div class="award-desc">Edusave Scholarship 2020</div>
+      </div>
+      <div class="award-card">
+        <img src="../images/BGSS-Top in Subject DNT 2020.jpg" alt="Top in Subject: Design & Technology 2020" />
+        <div class="award-desc">Top in Subject: Design & Technology 2020</div>
+      </div>
+      <div class="award-card">
+        <img src="../images/Edusave Scholarship 2019.jpg" alt="Edusave Scholarship 2019" />
+        <div class="award-desc">Edusave Scholarship 2019</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="courses-certificates" class="section-borderless">
+  <div class="container">
+    <h3><i class="fas fa-certificate"></i> Courses Certificates</h3>
+    <h4 class="award-category"></h4>
+    <div class="awards-grid">
+      <div class="award-card">
+        <img src="../images/Coursera Google UX Design Cert.jpg" alt="Google UI/UX Certificate" />
+        <div class="award-desc">Google UI/UX Certificate</div>
+      </div>
+      <div class="award-card">
+        <img src="../images/Coursera Google IT Support Cert.jpg" alt="Google IT Support Certificate" />
+        <div class="award-desc">Google IT Support Certificate</div>
+      </div>
+      <div class="award-card">
+        <img src="../images/Coursera Google Cybersecurity Cert.jpg" alt="Google Cybersecurity Certificate" />
+        <div class="award-desc">Google Cybersecurity Certificate</div>
+      </div>
+      <div class="award-card">
+        <img src="../images/Coursera Google Digital Marketing & E-Commerce Cert.jpg" alt="Google Digital Marketing & E-Commerce Certificate" />
+        <div class="award-desc">Google Digital Marketing & E-Commerce Certificate</div>
+      </div>
+      <div class="award-card">
+        <img src="../images/ArcGIS Online Basics Cert.jpg" alt="ArcGIS Online Basics Certificate" />
+        <div class="award-desc">ArcGIS Online Basics Certificate</div>
+      </div>
+      <div class="award-card">
+        <img src="../images/ArcGIS Pro Essential Training Cert.jpg" alt="ArcGIS Pro Essential Training Certificate" />
+        <div class="award-desc">ArcGIS Pro Essential Training Certificate</div>
+      </div>
+      <div class="award-card">
+        <img src="../images/Creating and Sharing GIS Content Using ArcGIS Online Cert.jpg" alt="Creating and Sharing GIS Content Using ArcGIS Online Certificate" />
+        <div class="award-desc">Creating and Sharing GIS Content Using ArcGIS Online Certificate</div>
+      </div>
+      <div class="award-card">
+        <img src="../images/GeoSpace 101 Cert.jpg" alt="GeoSpace 101 Certificate" />
+        <div class="award-desc">GeoSpace 101 Certificate</div>
+      </div>
+      <div class="award-card">
+        <img src="../images/QGIS Primer Cert.jpg" alt="QGIS Primer Certificate" />
+        <div class="award-desc">QGIS Primer Certificate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials-section" class="section-borderless2">
+  <div class="container">
+    <h3><i class="fas fa-comment-alt"></i> Testimonials</h3>
+    <h4 class="award-category"></h4>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <img src="../images/BGSS- Testimonial.jpg" alt="Bedok Green Secondary School Testimonial" />
+        <div class="testimonial-desc">Bedok Green Secondary School Testimonial</div>
+      </div>
+      <div class="testimonial-card">
+        <img src="../images/SLA-Testimonial.jpg" alt="SLA Testimonial" />
+        <div class="testimonial-desc">SLA Testimonial </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg" />
+</div>   
+
+ <!-- Footer -->
+
+  <footer id="footer" class="footer-gradient">
+    <div class="container footer-container">
+      <p>&copy; 2025 Khen's Portfolio. All rights reserved.</p>
+    </div>
+  </footer>
+
+ <script src="PortfolioJava.js"></script>
+
+</body>
+</html>
