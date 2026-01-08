@@ -13,7 +13,7 @@
 
 .about-container {
     display: flex;
-    flex-direction: column; /* Mobile-first: stack image and text */
+    flex-direction: column; 
     align-items: center;
     gap: 40px;
     max-width: 1000px;
@@ -22,7 +22,6 @@
     text-align: center;
 }
 
-/* Desktop layout: Image and Text side-by-side */
 @media (min-width: 900px) {
     .about-container {
         flex-direction: row;
@@ -37,7 +36,6 @@
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    /* Uses the hover shadow for a more pronounced border effect */
     box-shadow: var(--box-shadow-hover); 
     transition: box-shadow 0.3s ease;
 }
@@ -51,7 +49,7 @@
 }
 
 .about-image:hover img {
-    transform: scale(1.05); /* Subtle zoom effect on hover */
+    transform: scale(1.05);
 }
 
 .about-text {
@@ -62,7 +60,6 @@
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 20px;
-    /* Subtle separation line */
     border-bottom: 2px solid var(--border-color); 
     padding-bottom: 10px;
     display: inline-block;
@@ -72,21 +69,15 @@
     font-size: 1.1rem;
     color: var(--text-color);
     margin-bottom: 15px;
+    line-height: 1.6;
 }
-
-.about-text strong {
-    color: var(--secondary-color);
-    font-weight: 700;
-}
-
 
 /* ---------------------------------------------------- */
-/* === TIMELINE SECTION STYLES (Education/Experience) === */
+/* === TIMELINE SECTION STYLES === */
 /* ---------------------------------------------------- */
 
 .timeline-section {
     padding: 60px 0 80px 0;
-    /* Use block color for cards background, contrasting with the main page background */
     background-color: var(--block-background); 
     text-align: center;
     border-top: 1px solid var(--border-color);
@@ -101,11 +92,11 @@
 
 .timeline {
     position: relative;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* The vertical connecting line: Uses the Primary/Border Color (Green/Teal) */
+/* The vertical connecting line (Centered) */
 .timeline::after {
     content: '';
     position: absolute;
@@ -114,7 +105,7 @@
     top: 0;
     bottom: 0;
     left: 50%;
-    margin-left: -2px;
+    margin-left: -2px; 
     transition: background-color 0.3s;
 }
 
@@ -129,7 +120,6 @@
 /* Content boxes */
 .timeline-content {
     padding: 20px 30px;
-    /* Card background: uses section-background which is typically lighter than block-background in dark mode */
     background-color: var(--section-background); 
     position: relative;
     border-radius: 8px;
@@ -140,10 +130,10 @@
 }
 
 .timeline-event:hover .timeline-content {
-    box-shadow: var(--box-shadow-hover); /* Depth on hover */
+    box-shadow: var(--box-shadow-hover); 
+    border-color: var(--primary-color);
 }
 
-/* Title: Uses Primary Color (Green/Teal) */
 .timeline-content h3 {
     color: var(--primary-color);
     margin-top: 0;
@@ -152,9 +142,10 @@
 
 .timeline-year {
     display: block;
-    font-size: 0.95rem;
-    color: var(--dark-gray);
-    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 12px;
 }
 
 .timeline-content ul {
@@ -165,45 +156,46 @@
 .timeline-content li {
     padding-left: 20px;
     position: relative;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     color: var(--text-color);
+    line-height: 1.4;
 }
 
-/* Checkmark icon for list items: Uses Primary Color (Green/Teal) */
+/* Minimalist Dash Bullet Points */
 .timeline-content li::before {
-    content: "\f00c"; /* Check icon from Font Awesome */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    color: var(--primary-color); 
+    content: ""; 
     position: absolute;
     left: 0;
-    top: 0;
+    top: 10px;
+    width: 10px;
+    height: 2px;
+    background-color: var(--primary-color); 
+    border-radius: 2px;
 }
 
-/* Bold text: Uses Primary Color (Green/Teal) */
 .timeline-content b {
     color: var(--primary-color); 
     font-weight: 700;
 }
 
-/* Circles on the timeline: Uses Primary Color (Green/Teal) */
+/* Default Circle Styles */
 .timeline-circle {
     position: absolute;
     width: 20px;
     height: 20px;
     background-color: var(--primary-color);
-    border: 4px solid var(--block-background); /* Creates a distinct ring */
+    border: 4px solid var(--block-background);
     top: 35px;
     border-radius: 50%;
-    z-index: 10; /* Ensure the circle is on top of the line */
+    z-index: 10;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* Event on the left side */
+/* === LEFT EVENT POSITIONING === */
 .timeline-event.left {
     left: 0;
 }
-/* Arrow pointing to the line from the left content box */
+
 .timeline-event.left .timeline-content::after {
     content: " ";
     height: 0;
@@ -214,18 +206,17 @@
     border-width: 10px 0 10px 15px;
     border-color: transparent transparent transparent var(--section-background);
 }
-/* Adjust circle position for left side (centered on the line) */
+
+/* Fixes circle to the center line for left side */
 .timeline-event.left .timeline-circle {
-    left: 50%;
-    transform: translateX(-50%);
-    right: unset;
+    right: -10px; /* Moves center of 20px circle to the line */
 }
 
-/* Event on the right side */
+/* === RIGHT EVENT POSITIONING === */
 .timeline-event.right {
     left: 50%;
 }
-/* Arrow pointing to the line from the right content box */
+
 .timeline-event.right .timeline-content::after {
     content: " ";
     height: 0;
@@ -236,10 +227,10 @@
     border-width: 10px 15px 10px 0;
     border-color: transparent var(--section-background) transparent transparent;
 }
-/* Adjust circle position for right side (centered on the line) */
+
+/* Fixes circle to the center line for right side */
 .timeline-event.right .timeline-circle {
-    left: 50%;
-    transform: translateX(-50%);
+    left: -10px; /* Moves center of 20px circle to the line */
 }
 
 /* Timeline Tags */
@@ -251,75 +242,45 @@
     display: inline-block;
     padding: 4px 10px;
     border-radius: 4px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: var(--hover-color); /* White text for tags */
+    color: #ffffff;
 }
 
-.tag.school {
-    background-color: blue;
-}
-.tag.project {
-    background-color: red;
-}
-.tag.internship{
-    background-color: orange;
-}
-.tag.work {
-    background-color: pink;
-}
-.tag.future {
-    background-color: green;
-}
-/* === MEDIA QUERIES (RESPONSIVENESS) === */
+.tag.school { background-color: blue; }
+.tag.project { background-color: red; }
+.tag.internship { background-color: orange; }
+.tag.work { background-color: pink; }
+.tag.future { background-color: green; }
+
+/* === RESPONSIVENESS === */
 
 @media (max-width: 768px) {
-    /* Timeline styles for mobile (single column) */
     .timeline::after {
-        left: 20px; /* Move vertical line to the left */
+        left: 20px;
     }
 
     .timeline-event {
         width: 100%;
-        padding-left: 50px; /* Space for the line and circle */
+        padding-left: 50px;
         padding-right: 10px;
     }
 
-    /* All events align to the left */
     .timeline-event.left,
     .timeline-event.right {
         left: 0;
     }
 
-    /* Adjust the circle positions */
+    /* Reset mobile circle position to stay on the left-aligned line */
     .timeline-event.left .timeline-circle,
     .timeline-event.right .timeline-circle {
-        left: 20px; /* Align circle to the new line position */
-        transform: translateX(-50%);
+        left: 10px; /* Center of circle on the 20px mark */
+        right: auto;
     }
     
-    /* Remove the arrow on the content box for better mobile flow */
     .timeline-event.left .timeline-content::after,
     .timeline-event.right .timeline-content::after {
         display: none;
-    }
-    
-    .timeline-event.left .timeline-content {
-        margin-left: 0;
-    }
-}
-
-@media (max-width: 900px) {
-    /* About section image/text stack adjustments */
-    .about-image {
-        width: 200px;
-        height: 200px;
-    }
-    .about-text h2 {
-        font-size: 2rem;
-    }
-    .about-text p {
-        font-size: 1rem;
     }
 }
