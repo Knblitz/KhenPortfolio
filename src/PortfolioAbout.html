@@ -4,150 +4,154 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>About - Khen's Portfolio</title>
-  <link rel="stylesheet" href="PortfolioStyle.css" />
+    <link rel="stylesheet" href="PortfolioStyle.css" />
     <link rel="stylesheet" href="PortfolioRespondStyle.css" />
-        <link rel="stylesheet" href="PortfolioAboutStyle.css" />
-
-
+    <link rel="stylesheet" href="PortfolioAboutStyle.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body class="About">
 
     <header>
-    <div class="navcontainer">
-      <h1 class="logo">Khen's Portfolio</h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="PortfolioIndex.html">Home</a></li>
-          <li><a href="PortfolioAbout.html" class="active">About</a></li>
-          <li><a href="PortfolioSkill.html">Skill</a></li>
-          <li><a href="PortfolioProject.html">Projects</a></li>
-          <li><a href="PortfolioContact.html">Contact</a></li>
-          <li><button id="mode-toggle" aria-label="Toggle light/dark mode">🌙/☀️</button></li>
-        </ul>
-      </nav>
-      <div class="hamburger" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-      </div>
-    </div>
-  </header>
-     <section id="about" class="about-section">
-        <div class="about-container">
-            <div class="about-image">
-   <img src="../images/ProfilePic.jpg" alt="Profile Image" />            </div>
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>Hello! I'm Khen, a passionate and driven Year 3 Higher Nitec student specializing in IT Application Development at ITE College East. I'm currently immersed in the exciting world of web development, where I enjoy building interactive and user-friendly interfaces.</p>
-                <p>I'm also exploring the creative possibilities of game development and the evolving potential of AI and UI/UX design — fascinated by how smart, intuitive systems can transform digital experiences. My studies have equipped me with a solid foundation in programming and problem-solving.</p>
-                <p>My primary goal is to continuously grow as a developer, contribute meaningfully to innovative projects, and refine my skills across various technologies. I'm eager to collaborate on challenging tasks and am always enthusiastic about learning new things. Whether it's crafting clean code, designing engaging experiences, or tackling complex problems, I'm always up for the challenge and committed to delivering quality work.</p>
-                <p class="call-to-action">Want to see what I've been working on? Check out my <a href="PortfolioProject.html" class="link-highlight">Projects</a> page or learn more about my <a href="PortfolioSkill.html" class="link-highlight">Skills</a>.</p>
+        <div class="navcontainer">
+            <h1 class="logo">Khen's Portfolio</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="PortfolioIndex.html">Home</a></li>
+                    <li><a href="PortfolioAbout.html" class="active">About</a></li>
+                    <li><a href="PortfolioSkill.html">Skill</a></li>
+                    <li><a href="PortfolioProject.html">Projects</a></li>
+                    <li><a href="PortfolioContact.html">Contact</a></li>
+                    <li><button id="mode-toggle" aria-label="Toggle light/dark mode">🌙/☀️</button></li>
+                </ul>
+            </nav>
+            <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
-    </section>
-    
-<section class="timeline-section">
-  <h2 class="timeline-title">My Journey</h2>
-  <div class="timeline">
-    
-    <div class="timeline-event right">
-      <div class="timeline-circle"></div>
-      <div class="timeline-content">
-        <div class="timeline-tags"><span class="tag future">Future</span></div>
-        <h3>The Next Chapter</h3>
-        <span class="timeline-year">2026 & Beyond</span>
-        <p>Seeking to leverage my technical foundation in Full-Stack roles and continue building innovative digital solutions.</p>
-      </div>
-    </div>
+    </header>
 
-<div class="timeline-event left">
-  <div class="timeline-circle"></div>
-  <div class="timeline-content">
-    <div class="timeline-tags"><span class="tag school">School</span></div>
-    <h3>ITE College East</h3>
-    <span class="timeline-year">2023 – Feb 2026</span>
-    <ul>
-      Higher Nitec in IT Application Development
-      <li><b>Cumulative GPA:</b> 3.405 (Raw) | 3.555 (with CCA Bonus)</li>
-<li><b>ACE Programme:</b> High-achievement track for top-tier students (GPA 3.0+); focused on leadership and holistic excellence.</li>
-      <li><b>Entrepreneurship Club EXCO:</b> Leading student initiatives</li>
-      <li><b>Academic Excellence:</b> Director's List recipient</li>
-      <li><b>Student Mentor:</b> Guiding peers in programming logic</li>
-    </ul>
-  </div>
-</div>
-
-    <div class="timeline-event right">
-      <div class="timeline-circle"></div>
-      <div class="timeline-content">
-        <div class="timeline-tags"><span class="tag school">School</span></div>
-        <h3>CollectorsCorner E-Commerce</h3>
-        <span class="timeline-year">2025</span>
-        <p>A full-stack marketplace built on the MVC pattern using SQL Server for robust data management.</p>
-      </div>
+    <main>
+       <section id="about" class="about-section">
+    <div class="about-container">
+        <figure class="about-image">
+            <img src="../images/ProfilePic.jpg" alt="Profile Image of Khen" />
+        </figure>
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>Hello! I'm Khen, a recent <strong>IT Application Development graduate</strong> from ITE College East. Having completed my studies with a solid foundation in programming and problem-solving, I am now focused on transitioning from a student to a professional developer.</p>
+            
+            <p>I am deeply interested in the evolving potential of AI and UI/UX design, but I have also recently begun exploring my creative side through <strong>Pixel Art</strong> and <strong>Digital Illustration </strong>. I am fascinated by how smart, intuitive systems can be combined with custom-crafted visuals to transform digital experiences.</p>
+            
+            <p>My primary goal is to continuously grow, contributing meaningfully to innovative projects while refining my skills across both code and art. Whether it's crafting clean code, designing engaging experiences, or tackling complex problems, I'm always up for the challenge and committed to delivering quality work.</p>
+            
+            <p class="call-to-action">Want to see what I've been working on? Check out my <a href="PortfolioProject.html" class="link-highlight">Projects</a> page or learn more about my <a href="PortfolioSkill.html" class="link-highlight">Skills</a>.</p>
+        </div>
     </div>
-
-    <div class="timeline-event left">
-      <div class="timeline-circle"></div>
-      <div class="timeline-content">
-        <div class="timeline-tags"><span class="tag school">School</span></div>
-        <h3>Flutter GPA Calculator</h3>
-        <span class="timeline-year">2025</span>
-        <p>A mobile-first utility app designed for academic projection and course tracking.</p>
-      </div>
-    </div>
-
-    <div class="timeline-event right">
-      <div class="timeline-circle"></div>
-      <div class="timeline-content">
-        <div class="timeline-tags"><span class="tag project">Project</span></div>
-        <h3>MoodCloud Wellness App</h3>
-        <span class="timeline-year">2025</span>
-        <p>A personal project focused on clean UI/UX design and modern web development workflows.</p>
-      </div>
-    </div>
-
-    <div class="timeline-event left">
-      <div class="timeline-circle"></div>
-      <div class="timeline-content">
-        <div class="timeline-tags"><span class="tag internship">Internship</span></div>
-        <h3>Singapore Land Authority (SLA)</h3>
-        <span class="timeline-year">Jul 2024 – Jun 2025</span>
-        <p>GeoSpatial Development Intern: Built tourist-centric web apps and conducted spatial data analysis using QGIS.</p>
-      </div>
-    </div>
-
-    <div class="timeline-event right">
-      <div class="timeline-circle"></div>
-      <div class="timeline-content">
-        <div class="timeline-tags"><span class="tag work">Work</span></div>
-        <h3>Buddy Hoagies Service Crew</h3>
-        <span class="timeline-year"> Jun 2023 – Present</span>
-        <p>Refining soft skills in communication, teamwork, and problem-solving in a fast-paced environment.</p>
-      </div>
-    </div>
-
-    <div class="timeline-event left">
-      <div class="timeline-circle"></div>
-      <div class="timeline-content">
-        <div class="timeline-tags"><span class="tag school">School</span></div>
-        <h3>Bedok Green Secondary</h3>
-        <span class="timeline-year">2019 – 2022</span>
-        <ul>
-          <li><b>NCC Leadership:</b> Staff Sergeant (PDS)</li>
-          <li><b>Sec 4 Class Vice-Chairperson:</b> Managing student relations</li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </section>
 
- <!-- Footer -->
-<footer id="footer" class="footer-gradient">
-    <div class="container footer-container">
-        <p>&copy; 2025 Khen's Portfolio. All rights reserved.</p>
-    </div>
-</footer>
+        <section class="timeline-section">
+            <h2 class="timeline-title">My Journey</h2>
+            <div class="timeline">
+                
+                <article class="timeline-event right">
+                    <div class="timeline-circle" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-tags"><span class="tag future">Future</span></div>
+                        <h3>The Next Chapter</h3>
+                        <time class="timeline-year">2026 & Beyond</time>
+                        <p>Seeking to leverage my technical foundation in Full-Stack roles and continue building innovative digital solutions.</p>
+                    </div>
+                </article>
 
- <script src="PortfolioJava.js"></script>
+                <article class="timeline-event left">
+                    <div class="timeline-circle" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-tags"><span class="tag school">School</span></div>
+                        <h3>ITE College East</h3>
+                        <time class="timeline-year" datetime="2023/2026">2023 – Feb 2026</time>
+                        <ul>
+                            <li><strong>Higher Nitec in IT Application Development</strong></li>
+                            <li><b>Cumulative GPA:</b> 3.405 (Raw) | 3.555 (with CCA Bonus)</li>
+                            <li><b>ACE Programme:</b> High-achievement track for top-tier students (GPA 3.0+); focused on leadership and holistic excellence.</li>
+                            <li><b>Entrepreneurship Club EXCO:</b> Leading student initiatives</li>
+                            <li><b>Academic Excellence:</b> Director's List recipient</li>
+                            <li><b>Student Mentor:</b> Guiding peers in programming logic</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="timeline-event right">
+                    <div class="timeline-circle" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-tags"><span class="tag school">School</span></div>
+                        <h3>CollectorsCorner E-Commerce</h3>
+                        <time class="timeline-year">2025</time>
+                        <p>A full-stack marketplace built on the MVC pattern using SQL Server for robust data management.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-event left">
+                    <div class="timeline-circle" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-tags"><span class="tag school">School</span></div>
+                        <h3>Flutter GPA Calculator</h3>
+                        <time class="timeline-year">2025</time>
+                        <p>A mobile-first utility app designed for academic projection and course tracking.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-event right">
+                    <div class="timeline-circle" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-tags"><span class="tag project">Project</span></div>
+                        <h3>MoodCloud Wellness App</h3>
+                        <time class="timeline-year">2025</time>
+                        <p>A personal project focused on clean UI/UX design and modern web development workflows.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-event left">
+                    <div class="timeline-circle" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-tags"><span class="tag internship">Internship</span></div>
+                        <h3>Singapore Land Authority (SLA)</h3>
+                        <time class="timeline-year" datetime="2024-07/2025-06">Jul 2024 – Jun 2025</time>
+                        <p>GeoSpatial Development Intern: Built tourist-centric web apps and conducted spatial data analysis using QGIS.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-event right">
+                    <div class="timeline-circle" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-tags"><span class="tag work">Work</span></div>
+                        <h3>Buddy Hoagies Service Crew</h3>
+                        <time class="timeline-year">Jun 2023 – Present</time>
+                        <p>Refining soft skills in communication, teamwork, and problem-solving in a fast-paced environment.</p>
+                    </div>
+                </article>
+
+                <article class="timeline-event left">
+                    <div class="timeline-circle" aria-hidden="true"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-tags"><span class="tag school">School</span></div>
+                        <h3>Bedok Green Secondary</h3>
+                        <time class="timeline-year">2019 – 2022</time>
+                        <ul>
+                            <li><b>NCC Leadership:</b> Staff Sergeant (PDS)</li>
+                            <li><b>Sec 4 Class Vice-Chairperson:</b> Managing student relations</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="footer-gradient">
+        <div class="container footer-container">
+            <p>&copy; 2025 Khen's Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="PortfolioJava.js"></script>
 </body>
 </html>

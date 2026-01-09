@@ -1,102 +1,82 @@
+/* ==========================================================
+   KHEN'S PORTFOLIO - MAIN STYLES (PortfolioStyle.css)
+   ========================================================== */
+
 :root {
-   /* === PRIMARY COLORS (Modern, Professional Blue/Teal) === */
-            --primary-color: #1E88E5; /* Action items, main highlight (Blue) */
-            --secondary-color: #26A69A; /* Accent color, hover backgrounds (Teal) */
-            --highlight-color: #FFB300; /* Subtle highlight for text (Amber) */
-            --hover-color: #FFFFFF; /* White text for button hover */
-            --link-hover-color: #1565C0; /* Darker Blue for link hover */
+    /* === PRIMARY COLORS === */
+    --primary-color: #1E88E5;
+    --secondary-color: #26A69A;
+    --highlight-color: #FFB300;
+    --hover-color: #FFFFFF;
+    --link-hover-color: #1565C0;
 
-            /* === BACKGROUND COLORS (Clean & Sleek) === */
-            --background-color: #F4F4F9; /* Off-White/Light Gray */
-            --background-color2: #d0d0dd; /* Off-White/Light Gray */
-                        --background-color3: #cacae6; /* Off-White/Light Gray */
+    /* === BACKGROUND COLORS === */
+    --background-color: #F4F4F9;
+    --background-color2: #d0d0dd;
+    --background-color3: #cacae6;
+    --headernav: #FFFFFF;
+    --section-background: #F4F4F9;
+    --block-background: #FFFFFF;
+    --dropdown-background: #FFFFFF;
 
-            --headernav: #FFFFFF; /* Pure White Header */
-            --section-background: #F4F4F9;
-            --block-background: #FFFFFF; /* Card backgrounds */
-            --dropdown-background: #FFFFFF;
-
-            /* === FOOTER & GRADIENT === */
-          --footer-background-light: #C5C5D3; /* Darker light-gray base for the gradient start */
-    --footer-background-dark: #E0E0E5;  /* Fades into a less-light gray */
+    /* === FOOTER & GRADIENT === */
+    --footer-background-light: #C5C5D3;
+    --footer-background-dark: #E0E0E5;
     --footer-gradient: linear-gradient(to top, var(--footer-background-light) 0%, var(--footer-background-dark) 100%);
-    --footer-text-color: #555555; /* Dark gray text */
-            /* === TEXT COLORS === */
-            --text-color: #333333; /* Dark Gray for main text */
-            --light-gray: #555555;
-            --dark-gray: #999999;
-            --subheading-color: var(--primary-color);
-            --paragraph-color: var(--text-color);
-            --link-hover-text: #FFFFFF;
+    --footer-text-color: #555555;
 
-            /* === BORDERS & SHADOWS === */
-            --border-color: #E0E0E0;
-            --separator-color: #CCCCCC;
-            --box-shadow: 0 4px 12px rgba(30, 136, 229, 0.1);
-            --box-shadow-hover: 0 8px 18px rgba(30, 136, 229, 0.2);
+    /* === TEXT COLORS === */
+    --text-color: #333333;
+    --light-gray: #555555;
+    --dark-gray: #999999;
+    --subheading-color: var(--primary-color);
+    --paragraph-color: var(--text-color);
+    --link-hover-text: #FFFFFF;
 
-            /* === BUTTONS === */
-            --button-background: var(--secondary-color);
-            --button-hover-background: #00897B; /* Darker Teal */
-            --cta-button-background: var(--primary-color);
-            --cta-button-hover: #1565C0;
-            --button-text: #FFFFFF;
+    /* === BORDERS & SHADOWS === */
+    --border-color: #E0E0E0;
+    --separator-color: #CCCCCC;
+    --box-shadow: 0 4px 12px rgba(30, 136, 229, 0.1);
+    --box-shadow-hover: 0 8px 18px rgba(30, 136, 229, 0.2);
 
-            /* === MISCELLANEOUS === */
-            --icon-color: var(--primary-color);
-            --subtle-bottom-shadow: rgba(0, 0, 0, 0.05);
+    /* === BUTTONS === */
+    --button-background: var(--secondary-color);
+    --button-hover-background: #00897B;
+    --cta-button-background: var(--primary-color);
+    --cta-button-hover: #1565C0;
+    --button-text: #FFFFFF;
+
+    /* === MISCELLANEOUS === */
+    --icon-color: var(--primary-color);
+    --subtle-bottom-shadow: rgba(0, 0, 0, 0.05);
 }
 
 body.dark-mode {
-            /* === PRIMARY COLORS (Dark Mode) === */
-            --primary-color: #64B5F6; /* Light Blue */
-            --secondary-color: #4DB6AC; /* Light Teal */
-            --highlight-color: #FFECB3; /* Light Amber */
-            --hover-color: #333333; /* Dark text for button hover */
-            --link-hover-color: #42A5F5; /* Lighter Blue for link hover */
-
-            /* === BACKGROUND COLORS (Dark Slate) === */
-            --background-color: #1D1D2C;
-            --background-color2: #2b2b47;
-            --background-color3: #313153;
-            --headernav: #2A2A3E; /* Darker Slate Header */
-            --section-background: #1D1D2C;
-            --block-background: #2A2A3E; /* Card backgrounds */
-            --dropdown-background: #1D1D2C;
-
-            /* === FOOTER & GRADIENT === */
-     --footer-background-light: #0A0A10; /* Near-black for the bottom */
-    --footer-background-dark: #232331; /* Fades into the main body background */
-    --footer-gradient: linear-gradient(to top, var(--footer-background-light) 0%, var(--footer-background-dark) 100%);
-    --footer-text-color: #B0B0B0; /* Light gray text */
-
-            /* === TEXT COLORS (Light) === */
-            --text-color: #E0E0E0;
-            --light-gray: #B0B0B0;
-            --dark-gray: #757575;
-            --subheading-color: var(--primary-color);
-            --paragraph-color: var(--text-color);
-            --link-hover-text: #1D1D2C;
-
-            /* === BORDERS & SHADOWS (Subtle in dark mode) === */
-            --border-color: #444444;
-            --separator-color: #555555;
-            --box-shadow: 0 4px 12px rgba(100, 181, 246, 0.15);
-            --box-shadow-hover: 0 8px 18px rgba(100, 181, 246, 0.3);
-
-            /* === BUTTONS === */
-            --button-background: var(--secondary-color);
-            --button-hover-background: #00695C;
-            --cta-button-background: var(--primary-color);
-            --cta-button-hover: #42A5F5;
-            --button-text: #E0E0E0;
-
-            /* === MISCELLANEOUS === */
-            --icon-color: var(--primary-color);
-            --subtle-bottom-shadow: rgba(255, 255, 255, 0.05);
+    --primary-color: #64B5F6;
+    --secondary-color: #4DB6AC;
+    --highlight-color: #FFECB3;
+    --hover-color: #333333;
+    --link-hover-color: #42A5F5;
+    --background-color: #1D1D2C;
+    --background-color2: #2b2b47;
+    --background-color3: #313153;
+    --headernav: #2A2A3E;
+    --section-background: #1D1D2C;
+    --block-background: #2A2A3E;
+    --dropdown-background: #1D1D2C;
+    --footer-background-light: #0A0A10;
+    --footer-background-dark: #232331;
+    --footer-text-color: #B0B0B0;
+    --text-color: #E0E0E0;
+    --light-gray: #B0B0B0;
+    --dark-gray: #757575;
+    --border-color: #444444;
+    --separator-color: #555555;
+    --box-shadow: 0 4px 12px rgba(100, 181, 246, 0.15);
+    --box-shadow-hover: 0 8px 18px rgba(100, 181, 246, 0.3);
 }
 
-/* Base Styles */
+/* === Base Styles === */
 * {
     margin: 0;
     padding: 0;
@@ -108,8 +88,12 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth mode transition */
-    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+main {
+    display: block;
 }
 
 a {
@@ -127,13 +111,8 @@ h1, h2, h3, h4 {
     font-weight: 700;
 }
 
-h2 {
-    font-size: 2rem;
-}
-
-p {
-    margin-bottom: 1em;
-}
+h2 { font-size: 2rem; }
+p { margin-bottom: 1em; }
 
 .container {
     width: 90%;
@@ -141,21 +120,26 @@ p {
     margin: 0 auto;
 }
 
+/* === Section Backgrounds === */
 .section-borderless {
     padding: 60px 0;
     background-color: var(--background-color2);
     transition: background-color 0.3s ease;
 }
-.section-borderles2 {
+
+.section-borderless2 {
     padding: 60px 0;
     background-color: var(--background-color3);
     transition: background-color 0.3s ease;
 }
-.section-gradient {
-    height: 60px;
-    background: var(--section-gradient);
-}
 
+/* === Helper Classes (For Semantic HTML) === */
+.text-center { text-align: center; }
+.primary-text { color: var(--primary-color); }
+.secondary-text { color: var(--secondary-color); }
+.mb-40 { margin-bottom: 40px; }
+.small-container { max-width: 1000px; padding: 0 20px; }
+.core-skills-padding { padding-top: 0; padding-bottom: 40px; }
 
 /* === Header Styles === */
 header {
@@ -213,7 +197,6 @@ header {
 .nav-links li a.active:after {
     width: 100%;
     left: 0;
-    background: var(--primary-color);
 }
 
 #mode-toggle {
@@ -239,7 +222,7 @@ header {
     color: var(--text-color);
 }
 
-/* === Home / Intro Section Styles === */
+/* === Home / Intro Section === */
 .home-container {
     display: flex;
     align-items: center;
@@ -248,7 +231,8 @@ header {
 }
 
 .home-image {
-    flex-shrink: 0; /* Prevents image from shrinking */
+    flex-shrink: 0;
+    margin: 0;
 }
 
 .home-image img {
@@ -261,11 +245,6 @@ header {
     transition: box-shadow 0.3s ease;
 }
 
-.profile-circular-border {
-    /* Specific class for the main profile image */
-    box-shadow: 0 0 0 10px var(--block-background), 0 0 0 12px var(--primary-color);
-}
-
 .home-text {
     flex-grow: 1;
 }
@@ -274,11 +253,6 @@ header {
     color: var(--primary-color);
     font-size: 2.5rem;
     margin-bottom: 20px;
-}
-
-.home-text p {
-    font-size: 1.1rem;
-    color: var(--text-color);
 }
 
 .social-media-box {
@@ -295,12 +269,8 @@ header {
     background-color: var(--block-background);
     color: var(--primary-color);
     border: 1px solid var(--border-color);
-    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
     font-weight: 600;
-}
-
-.social-media-box a i {
-    margin-right: 8px;
 }
 
 .social-media-box a:hover {
@@ -324,17 +294,10 @@ header {
 
 .download-cv-btn:hover {
     background-color: var(--cta-button-hover);
-    color: black;
     transform: translateY(-2px);
 }
 
-.download-cv-btn i {
-    margin-right: 8px;
-}
-
-/* ------------------------------------------- */
-/* === NEW: Core Skills Showcase Styles === */
-/* ------------------------------------------- */
+/* === Skills Showcase === */
 .skills-showcase {
     display: flex;
     flex-wrap: wrap;
@@ -342,6 +305,7 @@ header {
     gap: 15px;
     padding: 30px 0;
 }
+
 .skill-badge {
     background-color: var(--block-background);
     color: var(--primary-color);
@@ -350,8 +314,9 @@ header {
     font-weight: 600;
     border: 2px solid var(--border-color);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: background-color 0.3s, transform 0.2s, color 0.3s;
+    transition: all 0.3s ease;
 }
+
 .skill-badge:hover {
     background-color: var(--secondary-color);
     color: var(--hover-color);
@@ -359,41 +324,32 @@ header {
     border-color: var(--secondary-color);
 }
 
-/* ======================================= */
-/* === Index Project Carousel Styles (2D Sliding/Scaling) === */
-/* ======================================= */
-
+/* === Project Carousel (2D Sliding) === */
 .IndexProject-carousel-wrapper {
-    /* Wraps the container and the arrows */
     position: relative;
     max-width: 900px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Height must be large enough to hold the scaled active card */
     height: 650px; 
 }
 
 .IndexProject-carousel-container {
-    /* The visible window for the carousel */
     position: relative;
     width: 100%;
-    max-width: 650px; /* Wider viewable area to see side cards */
+    max-width: 650px;
     height: 600px; 
-    overflow: hidden; /* CRITICAL: Hides cards pushed to +/-200% translateX */
+    overflow: hidden;
 }
 
 .IndexProject-carousel-track {
-    /* Absolute positioning context for the cards */
     position: relative; 
     width: 100%;
     height: 100%;
 }
 
 .IndexProject-card {
-    /* Card size and base style */
-    /* JS will set: position: absolute; left: 50%; top: 50%; transform: ... */
     width: 60%; 
     max-width: 450px;
     height: 80%;
@@ -403,7 +359,6 @@ header {
     box-shadow: var(--box-shadow);
     text-align: center;
     box-sizing: border-box;
-    /* Ensure the transition is defined for smooth movement */
     transition: all 0.5s ease-in-out; 
 }
 
@@ -419,7 +374,6 @@ header {
     margin-bottom: 15px;
 }
 
-/* === Arrow Styling === */
 .IndexProject-carousel-arrow {
     position: absolute;
     top: 50%;
@@ -430,8 +384,8 @@ header {
     padding: 12px;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 30; /* Ensure arrows are clickable over the cards */
-    transition: background-color 0.3s, transform 0.2s;
+    z-index: 30;
+    transition: all 0.3s ease;
     font-size: 1.2rem;
 }
 
@@ -440,121 +394,66 @@ header {
     transform: translateY(-50%) scale(1.1);
 }
 
-.IndexProject-carousel-arrow.prev {
-    left: 0; /* Aligned to the left edge of the wrapper */
-}
+.IndexProject-carousel-arrow.prev { left: 0; }
+.IndexProject-carousel-arrow.next { right: 0; }
 
-.IndexProject-carousel-arrow.next {
-    right: 0; /* Aligned to the right edge of the wrapper */
-}
-
-/* Responsive adjustments for the carousel wrapper */
-@media (max-width: 768px) {
-    .IndexProject-carousel-wrapper {
-        height: 400px;
-    }
-    .IndexProject-carousel-container {
-        max-width: 500px;
-        height: 350px;
-    }
-    .IndexProject-card {
-        width: 70%;
-        height: 85%;
-    }
-    .IndexProject-carousel-arrow.prev,
-    .IndexProject-carousel-arrow.next {
-        padding: 10px;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 500px) {
-    .IndexProject-carousel-wrapper {
-        height: 350px;
-    }
-    .IndexProject-carousel-container {
-        max-width: 90%; /* Use most of the screen width */
-        height: 300px;
-    }
-    .IndexProject-card {
-        width: 80%; /* Active card fills more space */
-        padding: 15px;
-    }
-    .IndexProject-card .project-image {
-        height: 120px;
-    }
-    /* Move arrows closer to the center on smaller screens */
-    .IndexProject-carousel-arrow.prev {
-        left: 5px; 
-    }
-    .IndexProject-carousel-arrow.next {
-        right: 5px; 
-    }
-}
-/* ------------------------------------------- */
-/* === NEW: Impact Highlights Section Styles === */
-/* ------------------------------------------- */
+/* === Impact Highlights === */
 .impact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     padding: 30px 0;
 }
+
 .impact-card {
     background: var(--block-background);
     border-radius: 12px;
     padding: 30px;
     box-shadow: var(--box-shadow);
-    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+    transition: all 0.3s ease;
     border: 1px solid var(--border-color);
-    height: 100%; /* Ensure equal height */
 }
+
 .impact-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--box-shadow-hover);
 }
+
 .impact-card h3 {
     color: var(--secondary-color);
     font-size: 1.5rem;
     margin-bottom: 15px;
 }
-.impact-card p {
-    font-size: 1rem;
-    margin-bottom: 10px;
-}
+
 .impact-card ul {
     list-style: none;
     padding-left: 0;
 }
+
 .impact-card ul li {
     margin-bottom: 8px;
     padding-left: 25px;
     position: relative;
-    font-size: 1.05rem;
-    line-height: 1.4;
 }
+
 .impact-card ul li::before {
-    content: "\f058"; /* Check-circle icon */
+    content: "\f058";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     color: var(--primary-color);
     position: absolute;
     left: 0;
-    top: 0;
 }
-.impact-card strong {
-    color: var(--primary-color);
-}
-.impact-card em {
+
+.impact-card time {
     color: var(--light-gray);
     font-style: italic;
-    display: block; /* New line for date range */
-    margin-top: 5px;
+    display: block;
+    margin: 5px 0 10px;
     font-size: 0.9rem;
 }
 
-
-/* === Awards, Certificates, Testimonials Grid Styles === */
+/* === Awards & Testimonials Grid === */
 .awards-grid, .testimonial-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -569,8 +468,9 @@ header {
     padding: 15px;
     box-shadow: var(--box-shadow);
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
     border: 1px solid var(--border-color);
+    margin: 0; /* Reset figure margin */
 }
 
 .award-card:hover, .testimonial-card:hover {
@@ -580,17 +480,49 @@ header {
 
 .award-card img, .testimonial-card img {
     width: 100%;
-    height: auto;
     border-radius: 8px;
+    aspect-ratio: 4/3;
     object-fit: contain;
     margin-bottom: 10px;
-    aspect-ratio: 4/3; /* Standard aspect ratio for certificates */
 }
 
 .award-desc, .testimonial-desc {
     font-size: 0.95rem;
     color: var(--light-gray);
     font-weight: 600;
+}
+
+/* === Modal Styles === */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.modal-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 5px;
+    animation: zoom 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+.close {
+    position: absolute;
+    top: 15px; right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    cursor: pointer;
 }
 
 /* === Footer Styles === */
@@ -601,444 +533,37 @@ header {
 }
 
 .footer-container p {
-    margin: 0;
-    /* Use the new dedicated variable */
     color: var(--footer-text-color); 
     font-size: 0.9rem;
 }
 
-/* === Modal Styles === */
-/* Find the existing .modal styles and update them, or add this block if missing */
-/* In PortfolioStyle.css */
-.modal {
-    /* CRUCIAL: This hides the modal on page load */
-    display: none; 
+/* === Responsive Media Queries === */
 
-    /* These are the properties you need for the scaling/centering fix */
-    position: fixed; 
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; 
-    background-color: rgba(0, 0, 0, 0.9); 
-    
-    /* Ensure flex is here so it centers when JS makes it visible */
-    align-items: center; 
-    justify-content: center; 
-}
-/* Find the existing .modal-content styles and replace or update them with this */
-.modal-content {
-    margin: auto; /* Keeps it centered if the parent isn't a flexbox */
-    display: block; 
-    
-    /* --- The Scaling Fix --- */
-    /* Set max dimensions to 90% of the viewport (screen) size */
-    max-width: 90vw; /* 90% of Viewport Width */
-    max-height: 90vh; /* 90% of Viewport Height */
-    
-    width: auto; /* Ensures natural scaling */
-    height: auto; /* Ensures natural scaling */
-    object-fit: contain; /* Ensures the entire image is visible without cropping */
-    /* ----------------------- */
-    
-    border-radius: 5px; /* Optional: adds a nice curve to the corners */
-    animation-name: zoom; /* Assuming you have a zoom animation */
-    animation-duration: 0.6s;
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-/* ==========================================================
-   Patch Notes Badge & Popups (Finalized CSS - Full System)
-   ========================================================== */
-
-/* 1. Badge Styling */
-.patchnote-badge {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 8px 12px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    font-weight: bold;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    background-color: var(--primary-color);
-    color: var(--hover-color);
-    box-shadow: 0 4px 10px rgba(67, 181, 129, 0.4);
-}
-
-body.dark-mode .patchnote-badge {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    box-shadow: 0 4px 10px rgba(139, 170, 255, 0.4);
-}
-
-/* 2. Full-Screen Glass Backdrop Overlay */
-.patchnote-glass-overlay {
-    display: none; /* Hides the entire full-screen glass effect initially */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 990; /* Below the badge/small popup */
-    
-    /* CORE GLASSMORHPISM EFFECT FOR THE ENTIRE SCREEN */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    background-color: rgba(0, 0, 0, 0.2); 
-    transition: opacity 0.3s ease;
-}
-
-/* 3. Small Patchnote Popup (Solid Background) */
-.patchnote-popup {
-    display: none;
-    position: fixed;
-    bottom: 60px;
-    right: 20px;
-    width: 300px;
-    z-index: 999; 
-    border-radius: 8px;
-    padding: 25px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    /* Solid Background for small box */
-    background-color: rgba(240, 240, 240, 0.8);
-    color: var(--text-color); 
-}
-body.dark-mode .patchnote-popup {
-    background-color: rgba(30, 30, 30, 0.8);
-}
-
-
-/* 4. Full Patchnote Popup (The Inner Box - Centered and Sized) */
-.patchnote-full-popup {
-    /* Centering remains the same */
-    position: absolute; 
-    top: 50%;
-    left: 50%;
-        transform: translate(-50%, calc(-50% + 50px)); /* <-- Adjust the '50px' here */
-
-    /* Resizing the inner box */
-    max-width: 700px; /* Constrains the maximum width */
-    width: 80%;      /* Ensures responsiveness on smaller screens */
-    
-    height: 90vh; /* Slightly reduced height */
-    overflow-y: hidden;
-    
-    padding: 10px; 
-    border-radius: 8px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); 
-}
-/* 5. Patchnote Content Container (Solid, Scrollable Background) */
-#patchnote-full-content {
-    /* Solid Background: Nearly Opaque for Readability */
-    background-color: rgba(240, 240, 240, 0.95); 
-    color: var(--text-color); 
-    
-    /* Document Padding: Generous side padding for readability */
-    padding: 30px 40px; 
-    
-    border-radius: 6px;
-    /* Height calculation ensures the content fills the box below the sticky button */
-    height: calc(100% - 65px); 
-    overflow-y: auto; 
-    
-    border: none;
-    box-shadow: none;
-}
-
-body.dark-mode #patchnote-full-content {
-    background-color: rgba(30, 30, 30, 0.95); 
-}
-
-/* 6. Patch Note Card Styling (For loaded content) */
-.patch-note-card {
-    background-color: var(--block-background); 
-    border: 1px solid var(--primary-color);
-    box-shadow: var(--box-shadow);
-    border-radius: 12px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-/* Dark Mode Card */
-body.dark-mode .patch-note-card {
-    border: 1px solid var(--secondary-color);
-}
-
-.patch-note-card h2 {
-    color: var(--primary-color);
-    font-size: 1.75rem; 
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-}
-body.dark-mode .patch-note-card h2 {
-    color: var(--secondary-color);
-}
-
-.patch-note-card p {
-    font-size: 0.9rem;
-    color: #888; 
-    margin-bottom: 1rem;
-}
-
-.patch-note-card h3 {
-    color: var(--text-color); 
-    font-size: 1.25rem;
-    font-weight: 500;
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.patch-note-card ul {
-    list-style-type: disc;
-    margin-left: 1.5rem;
-    margin-top: 0.5rem;
-    color: var(--text-color);
-}
-
-.patch-note-card ul li {
-    margin-bottom: 0.25rem;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-/* 7. Buttons and Specifics */
-.patchnote-popup-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: var(--primary-color);
-}
-body.dark-mode .patchnote-popup-title {
-    color: var(--secondary-color);
-}
-
-.patchnote-popup-list {
-    padding-left: 20px;
-    margin-top: 10px;
-}
-
-.patchnote-popup-button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-}
-
-.patchnote-popup-button-primary {
-    background-color: var(--primary-color);
-    color: var(--hover-color);
-    float: right;
-}
-body.dark-mode .patchnote-popup-button-primary {
-    background-color: var(--secondary-color);
-}
-
-.patchnote-popup-button-secondary {
-    background-color: transparent;
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-}
-body.dark-mode .patchnote-popup-button-secondary {
-    color: var(--secondary-color);
-    border: 1px solid var(--secondary-color);
-}
-
-.patchnote-full-popup-close-btn {
-    position: sticky;
-    top: 0;
-    margin: 0;
-    margin-bottom: 15px;
-    z-index: 10;
-}
-
-
-/*Form Popup Styles */
-/* Example CSS for the form popup */
-.form-popup {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%) translateY(100px); /* Initially hide below screen */
-    padding: 15px 25px;
-    border-radius: 8px;
-    color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transition: all 0.5s ease-out;
-    z-index: 10000;
-}
-
-.form-popup.show {
-    transform: translateX(-50%) translateY(0); /* Move up into view */
-    opacity: 1;
-}
-
-.form-popup.success {
-    background-color: #4CAF50; /* Green for success */
-}
-
-.form-popup.error {
-    background-color: #f44336; /* Red for error */
-}
-
-/* Media Queries for Responsiveness (kept the original structure from snippets) */
-
-/* Laptop (max-width: 1100px) */
 @media (max-width: 1100px) {
-    .home-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-    .home-image {
-        margin: 0 auto;
-    }
-    .home-text {
-        padding: 0 20px;
-    }
-    .social-media-box {
-        justify-content: center;
-    }
-
-    .awards-grid, .testimonial-grid, .impact-grid {
-        gap: 20px;
-        padding: 20px;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
-
-    .IndexProject-carousel-container {
-        max-width: 700px;
-    }
+    .home-container { flex-direction: column; text-align: center; }
+    .home-image { margin: 0 auto; }
+    .social-media-box { justify-content: center; }
 }
 
-/* Tablet (max-width: 768px) */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
         flex-direction: column;
         width: 60%;
         position: absolute;
-        top: 60px; /* Adjust based on header height */
-        right: 0;
+        top: 60px; right: 0;
         background-color: var(--headernav);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        border-radius: 0 0 8px 8px;
-        z-index: 999;
         padding: 20px;
-        text-align: center;
     }
-
-    .nav-links li {
-        margin: 10px 0;
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .home-image img {
-        width: 200px;
-        height: 200px;
-    }
-
-    .home-text h2 {
-        font-size: 2rem;
-    }
-
-    .section-borderless {
-        padding: 40px 0;
-    }
-
-    .awards-grid, .testimonial-grid, .impact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .IndexProject-carousel-container {
-        max-width: 100%;
-        padding: 0;
-    }
-
-    .IndexProject-carousel-arrow {
-        width: 35px;
-        height: 35px;
-        font-size: 1.2rem;
-    }
-
-    .patch-note-card {
-        padding: 1rem;
-    }
-    .patch-note-card h2 {
-        font-size: 1.4rem;
-    }
-    .patch-note-card h3 {
-        font-size: 1.1rem;
-    }
+    .nav-links.active { display: flex; }
+    .hamburger { display: block; }
+    .awards-grid, .impact-grid { grid-template-columns: 1fr; }
+    
+    .IndexProject-carousel-wrapper { height: 400px; }
+    .IndexProject-carousel-container { height: 350px; }
 }
-/* Mobile (max-width: 480px) */
+
 @media (max-width: 480px) {
-    .logo {
-        font-size: 24px;
-    }
-    .home-text h2 {
-        font-size: 1.8rem;
-    }
-    .home-text p {
-        font-size: 1rem;
-    }
-    .social-media-box {
-        flex-direction: column;
-        align-items: center;
-    }
-    .social-media-box a {
-        width: 100%;
-        max-width: 250px;
-        justify-content: center;
-    }
-    .download-cv-btn {
-        width: 100%;
-        max-width: 250px;
-        display: flex;
-        justify-content: center;
-        margin: 10px auto;
-    }
-    .patchnote-popup {
-        bottom: 60px;
-        right: 10px;
-        left: 10px;
-        width: auto;
-        max-width: none;
-    }
-    .patchnote-badge {
-        bottom: 15px;
-        right: 15px;
-    }
+    .social-media-box { flex-direction: column; align-items: center; }
+    .social-media-box a, .download-cv-btn { width: 100%; max-width: 250px; justify-content: center; }
 }

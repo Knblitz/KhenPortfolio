@@ -1,9 +1,3 @@
-/*
- * PortfolioAboutStyle.css
- * Dedicated styles for the About page (PortfolioAbout.html)
- * Uses variables from PortfolioStyle.css
- */
-
 /* === ABOUT SECTION STYLES === */
 .about-section {
     padding: 80px 0;
@@ -33,7 +27,7 @@
     flex-shrink: 0;
     width: 250px;
     height: 250px;
-    position: relative;
+    margin: 0; /* Reset figure default margins */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--box-shadow-hover); 
@@ -52,10 +46,6 @@
     transform: scale(1.05);
 }
 
-.about-text {
-    flex-grow: 1;
-}
-
 .about-text h2 {
     font-size: 2.5rem;
     color: var(--primary-color);
@@ -72,31 +62,20 @@
     line-height: 1.6;
 }
 
-/* ---------------------------------------------------- */
 /* === TIMELINE SECTION STYLES === */
-/* ---------------------------------------------------- */
-
 .timeline-section {
     padding: 60px 0 80px 0;
     background-color: var(--block-background); 
     text-align: center;
     border-top: 1px solid var(--border-color);
-    transition: background-color 0.3s ease;
-}
-
-.timeline-title {
-    color: var(--text-color);
-    font-size: 2.2rem;
-    margin-bottom: 50px;
 }
 
 .timeline {
     position: relative;
-    max-width: 1200px;
+    max-width: 1200px; /* Widened as requested */
     margin: 0 auto;
 }
 
-/* The vertical connecting line (Centered) */
 .timeline::after {
     content: '';
     position: absolute;
@@ -106,38 +85,29 @@
     bottom: 0;
     left: 50%;
     margin-left: -2px; 
-    transition: background-color 0.3s;
 }
 
-/* Container for all events */
 .timeline-event {
     padding: 10px 40px;
     position: relative;
     width: 50%;
-    transition: all 0.5s ease;
+    box-sizing: border-box;
+    display: block; /* Ensure article behaves as block */
 }
 
-/* Content boxes */
 .timeline-content {
-    padding: 20px 30px;
+    padding: 25px 35px;
     background-color: var(--section-background); 
-    position: relative;
     border-radius: 8px;
     box-shadow: var(--box-shadow);
     text-align: left;
     border: 1px solid var(--border-color);
-    transition: box-shadow 0.3s, background-color 0.3s, border-color 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .timeline-event:hover .timeline-content {
-    box-shadow: var(--box-shadow-hover); 
     border-color: var(--primary-color);
-}
-
-.timeline-content h3 {
-    color: var(--primary-color);
-    margin-top: 0;
-    font-size: 1.25rem;
+    box-shadow: var(--box-shadow-hover);
 }
 
 .timeline-year {
@@ -157,11 +127,11 @@
     padding-left: 20px;
     position: relative;
     margin-bottom: 8px;
-    color: var(--text-color);
     line-height: 1.4;
+    color: var(--text-color);
 }
 
-/* Minimalist Dash Bullet Points */
+/* Minimalist Dash Bullets */
 .timeline-content li::before {
     content: ""; 
     position: absolute;
@@ -170,15 +140,9 @@
     width: 10px;
     height: 2px;
     background-color: var(--primary-color); 
-    border-radius: 2px;
 }
 
-.timeline-content b {
-    color: var(--primary-color); 
-    font-weight: 700;
-}
-
-/* Default Circle Styles */
+/* Precise Circle Alignment */
 .timeline-circle {
     position: absolute;
     width: 20px;
@@ -188,99 +152,55 @@
     top: 35px;
     border-radius: 50%;
     z-index: 10;
-    transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* === LEFT EVENT POSITIONING === */
-.timeline-event.left {
-    left: 0;
-}
+.timeline-event.left { left: 0; }
+.timeline-event.left .timeline-circle { right: -10px; }
 
-.timeline-event.left .timeline-content::after {
+.timeline-event.right { left: 50%; }
+.timeline-event.right .timeline-circle { left: -10px; }
+
+/* Arrows */
+.timeline-content::after {
     content: " ";
     height: 0;
     position: absolute;
     top: 32px;
-    right: -15px;
     border: medium solid var(--section-background);
+}
+
+.timeline-event.left .timeline-content::after {
+    right: -15px;
     border-width: 10px 0 10px 15px;
     border-color: transparent transparent transparent var(--section-background);
 }
 
-/* Fixes circle to the center line for left side */
-.timeline-event.left .timeline-circle {
-    right: -10px; /* Moves center of 20px circle to the line */
-}
-
-/* === RIGHT EVENT POSITIONING === */
-.timeline-event.right {
-    left: 50%;
-}
-
 .timeline-event.right .timeline-content::after {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 32px;
     left: -15px;
-    border: medium solid var(--section-background);
     border-width: 10px 15px 10px 0;
     border-color: transparent var(--section-background) transparent transparent;
 }
 
-/* Fixes circle to the center line for right side */
-.timeline-event.right .timeline-circle {
-    left: -10px; /* Moves center of 20px circle to the line */
-}
-
-/* Timeline Tags */
-.timeline-tags {
-    margin-bottom: 10px;
-}
-
-.timeline-tags .tag {
+/* Tags */
+.tag {
     display: inline-block;
     padding: 4px 10px;
     border-radius: 4px;
     font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: #ffffff;
+    color: #fff;
 }
+.tag.school { background-color: #0044ff; }
+.tag.project { background-color: #ff0000; }
+.tag.internship { background-color: #ff8800; }
+.tag.work { background-color: #ff0077; }
+.tag.future { background-color: #00aa00; }
 
-.tag.school { background-color: blue; }
-.tag.project { background-color: red; }
-.tag.internship { background-color: orange; }
-.tag.work { background-color: pink; }
-.tag.future { background-color: green; }
-
-/* === RESPONSIVENESS === */
-
+/* Responsive Mobile view */
 @media (max-width: 768px) {
-    .timeline::after {
-        left: 20px;
-    }
-
-    .timeline-event {
-        width: 100%;
-        padding-left: 50px;
-        padding-right: 10px;
-    }
-
-    .timeline-event.left,
-    .timeline-event.right {
-        left: 0;
-    }
-
-    /* Reset mobile circle position to stay on the left-aligned line */
-    .timeline-event.left .timeline-circle,
-    .timeline-event.right .timeline-circle {
-        left: 10px; /* Center of circle on the 20px mark */
-        right: auto;
-    }
-    
-    .timeline-event.left .timeline-content::after,
-    .timeline-event.right .timeline-content::after {
-        display: none;
-    }
+    .timeline::after { left: 20px; }
+    .timeline-event { width: 100%; padding-left: 50px; left: 0 !important; }
+    .timeline-circle { left: 10px !important; right: auto !important; }
+    .timeline-content::after { display: none; }
 }

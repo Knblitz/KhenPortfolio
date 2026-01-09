@@ -9,12 +9,12 @@
   <link rel="stylesheet" href="PortfolioContactStyle.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="Contact">
 
   <header>
     <div class="navcontainer">
       <h1 class="logo">Khen's Portfolio</h1>
-      <nav>
+      <nav aria-label="Main navigation">
         <ul class="nav-links">
           <li><a href="PortfolioIndex.html">Home</a></li>
           <li><a href="PortfolioAbout.html">About</a></li>
@@ -24,60 +24,61 @@
           <li><button id="mode-toggle" aria-label="Toggle light/dark mode">🌙/☀️</button></li>
         </ul>
       </nav>
-      <div class="hamburger" onclick="toggleMenu()">
+      <div class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">
         <i class="fas fa-bars"></i>
       </div>
     </div>
   </header>
 
-<section class="portfolio-contact-section">
-    <div class="contact-wrapper">
-      
+  <main>
+    <section class="portfolio-contact-section">
+      <div class="contact-wrapper">
+        
         <div class="contact-info-area">
+          <header>
             <h2>Get in Touch!</h2>
             <p>Let's collaborate! I am always open to discussing exciting projects and new opportunities.</p>
-            
+          </header>
+          
+          <address class="contact-details">
             <ul class="contact-link-list">
-                <li>
-                    <i class="fas fa-envelope"></i> 
-                    khenthongwk@gmail.com 
-                </li>
-                <li>
-                    <i class="fas fa-phone"></i> 
-                    +65 9643 1329
-                </li>
-                <li>
-                    <i class="fas fa-map-marker-alt"></i> 
-                    Singapore
-                </li>
+              <li>
+                <i class="fas fa-envelope" aria-hidden="true"></i> 
+                <a href="mailto:khenthongwk@gmail.com">khenthongwk@gmail.com</a>
+              </li>
+              <li>
+                <i class="fas fa-phone" aria-hidden="true"></i> 
+                <a href="tel:+6596431329">+65 9643 1329</a>
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i> 
+                Singapore
+              </li>
             </ul>
+          </address>
 
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/khen-thong-a1b853282/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/Knblitz" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <!-- <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>-->
-                <a href="#" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a> 
-            </div>
+          <nav class="social-links" aria-label="Social Media Links">
+            <a href="https://www.linkedin.com/in/khen-thong-a1b853282/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Knblitz" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://wa.me/6596431329" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a> 
+          </nav>
         </div>
 
-
         <div class="contact-form-area">
-          
           <form action="https://formspree.io/f/xldbagko" method="POST" class="portfolio-form" id="contact-form">
-
             <div class="form-row">
               <div class="form-group-portfolio">
                 <label for="name" class="form-label-portfolio">
-                  <i class="fas fa-user"></i> Name <span style="color:red">*</span>
+                  <i class="fas fa-user"></i> Name <span class="required" aria-hidden="true">*</span>
                 </label>
                 <input type="text" id="name" name="name" class="form-input-portfolio"
-                  placeholder="Your Name" required autocomplete="name" aria-label="Your Name">
+                  placeholder="Your Name" required autocomplete="name">
               </div>
               <div class="form-group-portfolio">
                 <label for="subject" class="form-label-portfolio">
-                  <i class="fas fa-list"></i> Subject <span style="color:red">*</span>
+                  <i class="fas fa-list"></i> Subject <span class="required" aria-hidden="true">*</span>
                 </label>
-                <select id="subject" name="subject" class="form-input-portfolio" required aria-label="Subject">
+                <select id="subject" name="subject" class="form-input-portfolio" required>
                   <option value="" disabled selected>-- Select a subject --</option>
                   <option value="collaboration">Collaboration</option>
                   <option value="freelance">Freelance Work</option>
@@ -90,37 +91,37 @@
 
             <div class="form-group-portfolio">
               <label for="email" class="form-label-portfolio">
-                <i class="fas fa-envelope"></i> Email <span style="color:red">*</span>
+                <i class="fas fa-envelope"></i> Email <span class="required" aria-hidden="true">*</span>
               </label>
               <input type="email" id="email" name="email" class="form-input-portfolio"
-                placeholder="Your Email" required autocomplete="email" aria-label="Your Email">
+                placeholder="Your Email" required autocomplete="email">
             </div>
 
             <div class="form-group-portfolio">
               <label for="message" class="form-label-portfolio">
-                <i class="fas fa-comment"></i> Message <span style="color:red">*</span>
+                <i class="fas fa-comment"></i> Message <span class="required" aria-hidden="true">*</span>
               </label>
               <textarea id="message" name="message" rows="7" class="form-textarea-portfolio"
-                placeholder="Your Message" required aria-label="Your Message"></textarea>
+                placeholder="How can I help you?" required></textarea>
             </div>
-            <button type="submit" class="submit-button-portfolio">Send Message</button>
 
+            <button type="submit" class="submit-button-portfolio">Send Message</button>
           </form>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
+  </main>
 
- 
- <!-- Footer -->
   <footer id="footer" class="footer-gradient">
     <div class="container footer-container">
       <p>&copy; 2025 Khen's Portfolio. All rights reserved.</p>
     </div>
-</footer>
-<div id="form-popup" class="form-popup">
-  <p>Loading...</p> 
-</div>
-<script src="PortfolioJava.js"></script>
-  
+  </footer>
+
+  <div id="form-popup" class="form-popup" role="alert">
+    <p></p> 
+  </div>
+
+  <script src="PortfolioJava.js"></script>
 </body>
 </html>

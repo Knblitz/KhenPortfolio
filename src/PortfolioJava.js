@@ -397,22 +397,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+   // =========================================================================
+    // --- 7. "View More" Button for Skills (Updated for Multiple Categories) ---
     // =========================================================================
-    // --- 7. "View More" Button for Skills ---
-    // =========================================================================
-    const toggleSkillsBtn = document.getElementById("toggle-skills-btn");
-    if (toggleSkillsBtn) {
-        toggleSkillsBtn.addEventListener("click", function () {
-            const hiddenSkills = document.querySelector(".hidden-skill");
+    const skillToggleButtons = document.querySelectorAll(".view-more-button");
+    
+    skillToggleButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            // Find the closest skills-category container to this specific button
+            const category = this.closest('.skills-category');
+            if (!category) return;
+
+            const hiddenSkills = category.querySelector(".hidden-skill");
             const isExpanded = this.getAttribute("data-expanded") === "true";
 
             if (hiddenSkills) { 
                 hiddenSkills.classList.toggle("expanded", !isExpanded);
+                
+                // Update Button Text and State
+                this.textContent = isExpanded ? "View More >" : "View Less <";
+                this.setAttribute("data-expanded", !isExpanded);
             }
-            this.textContent = isExpanded ? "View More >" : "View Less <";
-            this.setAttribute("data-expanded", !isExpanded);
         });
-    }
+    });
 
     // =========================================================================
     // --- 8. Project View Toggle (List/Grid) ---

@@ -7,7 +7,6 @@
 /* ---------------------------------------------------- */
 /* === PROJECTS SECTION STYLES === */
 /* ---------------------------------------------------- */
-
 .project-section {
     padding: 60px 20px;
     background-color: var(--background-color);
@@ -19,25 +18,27 @@
     margin: 0 auto;
 }
 
+.project-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
 .project-title {
     color: var(--primary-color);
     font-size: 2.5rem;
-    margin-bottom: 10px;
-    text-align: center;
     font-weight: 700;
 }
 
 .project-subtitle {
     color: var(--text-color);
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    text-align: center;
+    font-size: 1.1rem;
+    opacity: 0.8;
 }
 
-/* === Toolbar and Toggle Buttons === */
+/* === Toolbar === */
 .project-toolbar {
     display: flex;
-    justify-content: flex-end; /* Align buttons to the right */
+    justify-content: flex-end;
     margin-bottom: 30px;
     gap: 10px;
 }
@@ -46,62 +47,57 @@
     background-color: var(--block-background);
     color: var(--text-color);
     border: 1px solid var(--border-color);
-    padding: 8px 12px;
+    padding: 10px 18px;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .project-toolbar button.active {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
-    color: var(--hover-color); /* Light text on primary background */
+    color: #ffffff;
 }
 
-.project-toolbar button:hover:not(.active) {
-    background-color: var(--section-background);
-    color: var(--primary-color);
-}
-
-
-/* === Project List Container - Default (List View) === */
+/* === Project List (Default List View) === */
 .project-list {
     display: flex;
-    flex-direction: column; /* Stacks projects vertically */
-    gap: 30px;
+    flex-direction: column;
+    gap: 25px;
 }
 
-/* === Individual Project Card Styling (List View) === */
-.project {
-    background-color: var(--section-background);
+.project-card {
+    background-color: var(--block-background);
     border-radius: 12px;
-    padding: 25px;
+    padding: 20px;
     border: 1px solid var(--border-color);
     box-shadow: var(--box-shadow);
     display: flex;
     gap: 25px;
     align-items: center;
-    transition: box-shadow 0.3s, transform 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project:hover {
+.project-card:hover {
+    transform: translateY(-5px);
     box-shadow: var(--box-shadow-hover);
-    transform: translateY(-2px);
 }
 
 .project-img-container {
-    flex-shrink: 0; /* Prevents image container from shrinking */
-    width: 250px;
-    height: 150px;
+    margin: 0;
+    flex-shrink: 0;
+    width: 280px;
+    height: 180px;
     overflow: hidden;
     border-radius: 8px;
+    background-color: #eee;
 }
 
 .project-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
 .project-info {
@@ -109,83 +105,62 @@
 }
 
 .project-info h3 {
-    color: var(--secondary-color);
-    font-size: 1.7rem;
-    margin-bottom: 5px;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
 .project-info p {
-    color: var(--text-color);
-    margin-bottom: 15px;
     font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-.project-link {
+.project-link, .project-status {
     display: inline-block;
-    padding: 8px 16px;
-    background-color: var(--primary-color);
-    color: var(--hover-color);
+    padding: 8px 20px;
+    background-color: var(--secondary-color);
+    color: #fff;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s;
+    font-size: 0.9rem;
+}
+
+.project-status {
+    background-color: #666; /* Gray for confidential/locked */
+    cursor: not-allowed;
 }
 
 .project-link:hover {
-    background-color: var(--highlight-color);
+    background-color: var(--primary-color);
 }
 
-
-/* ----------------------------------------------------
-   Grid View (Activated by JS adding the .grid-view class)
-   ---------------------------------------------------- */
+/* === Grid View Modifier === */
 .project-list.grid-view {
-    /* CRITICAL: Defines the grid layout */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
-.project-list.grid-view .project {
-    /* Stacks elements vertically within the card */
-    flex-direction: column; 
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 15px;
-    gap: 15px;
-    box-shadow: var(--box-shadow);
-    background-color: var(--block-background);
-    /* Removes the list separator line */
-    border-bottom: none; 
+.project-list.grid-view .project-card {
+    flex-direction: column;
+    align-items: flex-start;
 }
-.project-list.grid-view .project-img-container {
-    /* Ensures the image fills the card width */
-    flex: none;
-    width: 100%; 
-    max-height: 200px;
-}
-.project-list.grid-view .project-info {
-    padding: 0 5px;
-}
-/* === Responsive Adjustments === */
-@media (max-width: 768px) {
-    /* Force List view stacking on small screens regardless of button state */
-    .project {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-    }
 
+.project-list.grid-view .project-img-container {
+    width: 100%;
+    height: 200px;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+    }
     .project-img-container {
         width: 100%;
-        height: 180px;
-        margin-bottom: 15px;
     }
-
-    .project-list {
-        grid-template-columns: 1fr; /* Single column */
-    }
-
     .project-toolbar {
         justify-content: center;
     }
