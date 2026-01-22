@@ -1,8 +1,11 @@
-/* === ABOUT SECTION STYLES === */
+/* =========================================================================
+   1. ABOUT SECTION STYLES
+   ========================================================================= */
 .about-section {
+    position: relative;
     padding: 80px 0;
-    background-color: var(--background-color);
-    transition: background-color 0.3s ease;
+    background-color: var(--block-background);
+    z-index: 1;
 }
 
 .about-container {
@@ -27,10 +30,9 @@
     flex-shrink: 0;
     width: 250px;
     height: 250px;
-    margin: 0; /* Reset figure default margins */
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: var(--box-shadow-hover); 
+    box-shadow: var(--box-shadow); 
     transition: box-shadow 0.3s ease;
 }
 
@@ -62,20 +64,31 @@
     line-height: 1.6;
 }
 
-/* === TIMELINE SECTION STYLES === */
+/* =========================================================================
+   2. TIMELINE SECTION STYLES
+   ========================================================================= */
 .timeline-section {
-    padding: 60px 0 80px 0;
-    background-color: var(--block-background); 
+    padding: 80px 0;
+    background-color: var(--section-background); 
     text-align: center;
     border-top: 1px solid var(--border-color);
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-title {
+    margin-bottom: 50px;
+    font-size: 2rem;
+    color: var(--primary-color);
 }
 
 .timeline {
     position: relative;
-    max-width: 1200px; /* Widened as requested */
+    max-width: 1000px;
     margin: 0 auto;
 }
 
+/* The Vertical Line */
 .timeline::after {
     content: '';
     position: absolute;
@@ -92,22 +105,66 @@
     position: relative;
     width: 50%;
     box-sizing: border-box;
-    display: block; /* Ensure article behaves as block */
+    cursor: pointer;
 }
 
 .timeline-content {
-    padding: 25px 35px;
-    background-color: var(--section-background); 
+    padding: 25px;
+    background-color: var(--block-background); 
     border-radius: 8px;
     box-shadow: var(--box-shadow);
     text-align: left;
     border: 1px solid var(--border-color);
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
+/* =========================================================================
+   3. HOVER ACTIVATION LOGIC
+   ========================================================================= */
+.timeline-details {
+    max-height: 0; /* Hidden by default */
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+/* Expand content when the card is hovered */
+.timeline-event:hover .timeline-details {
+    max-height: 600px; /* High enough to show all text */
+    opacity: 1;
+    margin-top: 15px;
+}
+
+/* Highlight card on hover */
 .timeline-event:hover .timeline-content {
     border-color: var(--primary-color);
     box-shadow: var(--box-shadow-hover);
+    transform: translateY(-5px);
+}
+
+/* Rotate indicator icon on hover */
+.timeline-event:hover .expand-indicator {
+    transform: rotate(180deg);
+}
+
+/* Fallback for Mobile (using the .expanded class from JS) */
+.timeline-event.expanded .timeline-details {
+    max-height: 600px;
+    opacity: 1;
+    margin-top: 15px;
+}
+.timeline-event.expanded .expand-indicator {
+    transform: rotate(180deg);
+}
+
+/* =========================================================================
+   4. DECORATIVE ELEMENTS
+   ========================================================================= */
+.expand-indicator {
+    float: right;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
 }
 
 .timeline-year {
@@ -121,6 +178,7 @@
 .timeline-content ul {
     list-style: none;
     padding-left: 0;
+    margin-top: 10px;
 }
 
 .timeline-content li {
@@ -131,18 +189,13 @@
     color: var(--text-color);
 }
 
-/* Minimalist Dash Bullets */
 .timeline-content li::before {
-    content: ""; 
+    content: "—"; 
     position: absolute;
     left: 0;
-    top: 10px;
-    width: 10px;
-    height: 2px;
-    background-color: var(--primary-color); 
+    color: var(--primary-color); 
 }
 
-/* Precise Circle Alignment */
 .timeline-circle {
     position: absolute;
     width: 20px;
@@ -160,27 +213,6 @@
 .timeline-event.right { left: 50%; }
 .timeline-event.right .timeline-circle { left: -10px; }
 
-/* Arrows */
-.timeline-content::after {
-    content: " ";
-    height: 0;
-    position: absolute;
-    top: 32px;
-    border: medium solid var(--section-background);
-}
-
-.timeline-event.left .timeline-content::after {
-    right: -15px;
-    border-width: 10px 0 10px 15px;
-    border-color: transparent transparent transparent var(--section-background);
-}
-
-.timeline-event.right .timeline-content::after {
-    left: -15px;
-    border-width: 10px 15px 10px 0;
-    border-color: transparent var(--section-background) transparent transparent;
-}
-
 /* Tags */
 .tag {
     display: inline-block;
@@ -190,6 +222,7 @@
     font-weight: bold;
     text-transform: uppercase;
     color: #fff;
+    margin-bottom: 10px;
 }
 .tag.school { background-color: #0044ff; }
 .tag.project { background-color: #ff0000; }
@@ -197,10 +230,27 @@
 .tag.work { background-color: #ff0077; }
 .tag.future { background-color: #00aa00; }
 
-/* Responsive Mobile view */
+/* =========================================================================
+   5. PARTICLES & RESPONSIVE
+   ========================================================================= */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 @media (max-width: 768px) {
     .timeline::after { left: 20px; }
-    .timeline-event { width: 100%; padding-left: 50px; left: 0 !important; }
-    .timeline-circle { left: 10px !important; right: auto !important; }
-    .timeline-content::after { display: none; }
+    .timeline-event { 
+        width: 100%; 
+        padding-left: 50px; 
+        left: 0 !important; 
+    }
+    .timeline-circle { 
+        left: 10px !important; 
+        right: auto !important; 
+    }
 }
