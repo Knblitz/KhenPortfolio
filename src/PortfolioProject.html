@@ -32,10 +32,10 @@
     <main>
         <section class="project-section">
             <div class="container project-container">
-                <header class="project-header">
-                    <h2 class="project-title">My Projects</h2>
-                    <p class="project-subtitle">A collection of academic and personal work showcasing my development and design skills.</p>
-                </header>
+                <div class="project-header">
+                    <h2 class="project-title">Coding Projects</h2>
+                    <p class="project-subtitle">Technical development and full-stack applications showcasing my programming logic.</p>
+                </div>
                 
                 <div class="project-toolbar">
                     <button id="list-view" class="active" aria-label="Switch to List View"><i class="fas fa-list"></i> List</button>
@@ -46,18 +46,18 @@
                     
                     <article class="project-card">
                         <figure class="project-img-container">
-                            <img src="../images/OneMapTourist.png" alt="BFA Tourist Planner interface" class="project-img">
+                            <img src="../images/OneMapTourist.png" alt="BFA Tourist Planner" class="project-img">
                         </figure>
                         <div class="project-info">
                             <h3>BFA Tourist Planner (SLA Task)</h3>
-                            <p>Assigned during my internship, tasked with a web app built with HTML, CSS, and JavaScript that helps users create personalised tour itineraries based on preferences.</p>
+                            <p>Assigned during my internship, tasked with a web app built with HTML, CSS, and JavaScript that helps users create personalised tour itineraries.</p>
                             <span class="project-status">Confidential</span>
                         </div>
                     </article>
 
                     <article class="project-card">
                         <figure class="project-img-container">
-                            <img src="../images/MoodCloudpic1.png" alt="MoodCloud application home page" class="project-img">
+                            <img src="../images/MoodCloudpic1.png" alt="MoodCloud" class="project-img">
                         </figure>
                         <div class="project-info">
                             <h3>MoodCloud</h3>
@@ -68,11 +68,11 @@
 
                     <article class="project-card">
                         <figure class="project-img-container">
-                            <img src="https://via.placeholder.com/380x240?text=E-commerce+Platform" alt="Full-stack platform screenshot" class="project-img">
+                            <img src="https://via.placeholder.com/380x240?text=E-commerce+Platform" alt="Full-stack platform" class="project-img">
                         </figure>
                         <div class="project-info">
                             <h3>Full-Stack E-commerce (MVC & SQL)</h3>
-                            <p>Enterprise Web Development final project. Features database normalization, secure authentication, and shopping cart management using MVC architectural patterns.</p>
+                            <p>Enterprise Web Development final project. Features database normalization, secure authentication, and shopping cart management.</p>
                             <a href="#" class="project-link disabled">TBC</a>
                         </div>
                     </article>
@@ -91,14 +91,63 @@
                 </div>
             </div>
         </section>
+
+        <hr class="section-divider">
+
+        <section class="pixel-art-section">
+            <div class="container">
+                <header class="project-header">
+                    <h2 class="project-title">Creative Gallery</h2>
+                    <p class="project-subtitle">A collection of my digital art, pixel sprites, and UI icons.</p>
+                </header>
+
+                <div class="pixel-gallery-grid">
+                    <div class="pixel-card-art">
+                        <img src="../images/PixelArt1.png" alt="Character Sprite Design" class="gallery-trigger">
+                        <div class="art-overlay">
+                            <span>Character Design v1</span>
+                        </div>
+                    </div>
+
+                    <div class="pixel-card-art placeholder shimmer-effect">
+                        <div class="shimmer-content">
+                            <i class="fas fa-palette"></i>
+                            <span>Coming Soon: Environment Tiles</span>
+                        </div>
+                    </div>
+
+                    <div class="pixel-card-art placeholder shimmer-effect">
+                        <div class="shimmer-content">
+                            <i class="fas fa-layer-group"></i>
+                            <span>Future Project: UI Icon Pack</span>
+                        </div>
+                    </div>
+
+                    <div class="pixel-card-art placeholder shimmer-effect">
+                        <div class="shimmer-content">
+                            <i class="fas fa-pencil-alt"></i>
+                            <span>In Progress: Animation Frames</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="document.getElementById('imageModal').style.display='none'">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <div id="caption"></div>
+    </div>
+
     <footer id="footer" class="footer-gradient">
         <div class="container footer-container">
             <p>&copy; 2025 Khen's Portfolio. All rights reserved.</p>
         </div>
     </footer>
-
+<button id="scrollToTop" class="scroll-btn" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
     <script src="PortfolioJava.js"></script>
 </body>
 </html>

@@ -86,90 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     // =========================================================================
-    // --- 3. Patchnote badge popup logic (Simplified Global Click Listener) ---
-    // =========================================================================
-    const patchnoteBadge = document.getElementById('patchnote-badge');
-    const patchnotePopup = document.getElementById('patchnote-popup');
-
-    // IMPORTANT: Target the full-screen overlay for show/hide
-    const patchnoteFullPopup = document.getElementById('full-patchnote-overlay'); 
-
-    const patchnoteFullContent = document.getElementById('patchnote-full-content');
-    const viewFullPatchnoteBtn = document.getElementById('view-full-patchnote');
-    const closePatchnoteBtn = document.getElementById('close-patchnote');
-    const closeFullPatchnoteBtn = document.getElementById('close-full-patchnote');
-
-    if (patchnoteBadge && patchnotePopup && patchnoteFullPopup) {
-        const closeAllPatchnotes = () => {
-            patchnotePopup.style.display = 'none';
-            patchnoteFullPopup.style.display = 'none'; // Closes the full-screen overlay
-        }
-        
-        patchnoteBadge.addEventListener('click', (e) => {
-            e.stopPropagation();
-            if (patchnotePopup.style.display === 'block') {
-                patchnotePopup.style.display = 'none';
-            } else {
-                closeAllPatchnotes(); 
-                patchnotePopup.style.display = 'block';
-            }
-        });
-
-        [closePatchnoteBtn, closeFullPatchnoteBtn].forEach(btn => {
-            if (btn) btn.addEventListener('click', (e) => { e.stopPropagation(); closeAllPatchnotes(); });
-        });
-
-        if (viewFullPatchnoteBtn) {
-            viewFullPatchnoteBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                patchnoteFullContent.innerHTML = '<h2>Loading Patch Notes...</h2>';
-                
-                // Show the full-screen overlay
-                patchnoteFullPopup.style.display = 'block'; 
-                
-                patchnotePopup.style.display = 'none';
-
-                fetch('patchnotes.html')
-                    .then(response => {
-                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                        return response.text();
-                    })
-                    .then(html => {
-                        const tempDiv = document.createElement('div');
-                        tempDiv.innerHTML = html;
-                        const patchList = tempDiv.querySelector('.patch-list');
-
-                        if (patchList) {
-                            patchnoteFullContent.innerHTML = patchList.outerHTML;
-                        } else {
-                            patchnoteFullContent.innerHTML = '<h2>Patch Notes Content Missing</h2>';
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error fetching patch notes:', error);
-                        patchnoteFullContent.innerHTML = '<h2>Error Loading Patch Notes</h2><p>Failed to load patch notes.</p>';
-                    });
-            });
-        }
-
-        window.addEventListener('click', (e) => {
-            // Close small popup if clicking outside
-            if (patchnotePopup.style.display === 'block' && !patchnotePopup.contains(e.target) && !patchnoteBadge.contains(e.target)) {
-                patchnotePopup.style.display = 'none';
-            }
-            // Close full popup overlay if clicking outside the content
-            if (patchnoteFullPopup.style.display === 'block' && !document.getElementById('patchnote-full-popup').contains(e.target) && e.target !== viewFullPatchnoteBtn) {
-                 patchnoteFullPopup.style.display = 'none';
-            }
-        });
-
-        [patchnotePopup, document.getElementById('patchnote-full-popup')].forEach(popup => {
-            if (popup) popup.addEventListener('click', (e) => e.stopPropagation());
-        });
-    }
-    
-    // =========================================================================
-    // --- 4. Project Carousel Scripts (2D Sliding/Scaling - Index Page) ---
+    // --- 3. Project Carousel Scripts (2D Sliding/Scaling - Index Page) ---
     // =========================================================================
     
     const carouselTrack = document.querySelector(".IndexProject-carousel-track");
@@ -237,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // =========================================================================
-    // --- 5. Simple Carousel Abstraction (Leadership & Volunteering) ---
+    // --- 4. Simple Carousel Abstraction (Leadership & Volunteering) ---
     // =========================================================================
 
     const createSimpleCarousel = (data, cardTrackSelector, imageElementId, prevArrowSelector, nextArrowSelector, containerSelector, cardClass, iconClass) => {
@@ -344,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // =========================================================================
-    // --- 6. Contact Form Submission (Retained AJAX functionality) ---
+    // --- 5. Contact Form Submission (Retained AJAX functionality) ---
     // =========================================================================
     const contactForm = document.getElementById("contact-form");
     const formPopup = document.getElementById("form-popup");
@@ -398,7 +315,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
    // =========================================================================
-    // --- 7. "View More" Button for Skills (Updated for Multiple Categories) ---
+    // --- 6. "View More" Button for Skills (Updated for Multiple Categories) ---
     // =========================================================================
     const skillToggleButtons = document.querySelectorAll(".view-more-button");
     
@@ -422,7 +339,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // =========================================================================
-    // --- 8. Project View Toggle (List/Grid) ---
+    // --- 7. Project View Toggle (List/Grid) ---
     // =========================================================================
     function setupProjectViewToggle() {
         const listViewBtn = document.getElementById('list-view');
@@ -469,4 +386,25 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Initialize the Project View Toggle function
     setupProjectViewToggle(); 
+});
+
+    // =========================================================================
+    // --- 8. Scroll to Top Button ---
+    // =========================================================================
+const scrollBtn = document.getElementById("scrollToTop");
+
+window.addEventListener("scroll", () => {
+    // Show button after scrolling down 400px
+    if (window.pageYOffset > 400) {
+        scrollBtn.classList.add("show");
+    } else {
+        scrollBtn.classList.remove("show");
+    }
+});
+
+scrollBtn.addEventListener("click", () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 });

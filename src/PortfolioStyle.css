@@ -19,11 +19,9 @@
     --block-background: #FFFFFF;
     --dropdown-background: #FFFFFF;
 
-    /* === FOOTER & GRADIENT === */
-    --footer-background-light: #C5C5D3;
-    --footer-background-dark: #E0E0E5;
-    --footer-gradient: linear-gradient(to top, var(--footer-background-light) 0%, var(--footer-background-dark) 100%);
-    --footer-text-color: #555555;
+/* === FOOTER (SOLID THEME) === */
+    --footer-bg: #E0E0E5;       /* Light neutral gray */
+    --footer-text: #555555;     /* Dark gray text */
 
     /* === TEXT COLORS === */
     --text-color: #333333;
@@ -64,9 +62,10 @@ body.dark-mode {
     --section-background: #1D1D2C;
     --block-background: #2A2A3E;
     --dropdown-background: #1D1D2C;
-    --footer-background-light: #0A0A10;
-    --footer-background-dark: #232331;
-    --footer-text-color: #B0B0B0;
+    /* === FOOTER (DARK THEME) === */
+    --footer-bg: #151521;       /* Deep navy, slightly darker than main background */
+    --footer-text: #B0B0B0;     /* Light gray text */
+
     --text-color: #E0E0E0;
     --light-gray: #B0B0B0;
     --dark-gray: #757575;
@@ -525,18 +524,68 @@ header {
     cursor: pointer;
 }
 
-/* === Footer Styles === */
-.footer-gradient {
-    background: var(--footer-gradient);
-    padding: 20px 0;
+#footer {
+    padding: 60px 0;
     text-align: center;
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    border-top: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .footer-container p {
-    color: var(--footer-text-color); 
+    margin: 0;
     font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+/* --- SCROLL TO TOP BUTTON --- */
+.scroll-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 12px; /* Matches your project card radius */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    z-index: 2000;
+    box-shadow: var(--box-shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.scroll-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-btn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+.scroll-btn:active {
+    transform: scale(0.9);
+}
+
+/* Ensure it doesn't overlap footer content on very small screens */
+@media (max-width: 600px) {
+    .scroll-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+}
 /* === Responsive Media Queries === */
 
 @media (max-width: 1100px) {

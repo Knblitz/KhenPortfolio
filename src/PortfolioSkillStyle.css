@@ -1,29 +1,29 @@
 /* ==========================================================
-   KHEN'S PORTFOLIO - SKILLS PAGE STYLES (PortfolioSkillStyle.css)
+   KHEN'S PORTFOLIO - SKILLS PAGE STYLES (Clean Professional)
    ========================================================== */
 
 /* === General Section Styles === */
 .resume-detail-section,
-.skills-section {
-    padding: 60px 20px;
+.skills-section,
+.proficiency-section {
+    padding: 80px 20px;
     background-color: var(--background-color);
     transition: background-color 0.3s ease;
 }
 
 .skills-section {
-    background-color: var(--background-color2); /* Slightly different shade for separation */
-    padding-bottom: 80px; 
+    background-color: var(--background-color2); 
 }
 
 .resume-section-container,
-.skills-container {
+.skills-container,
+.container {
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
 }
 
-.resume-section-container h2,
-.skills-container h2 {
+h2 {
     color: var(--primary-color);
     font-size: 2.5rem;
     margin-bottom: 10px;
@@ -44,7 +44,7 @@
     display: flex; 
     gap: 30px; 
     margin-bottom: 30px;
-    align-items: stretch; /* Ensures columns match height */
+    align-items: stretch;
 }
 
 .resume-block {
@@ -64,15 +64,9 @@
     transform: translateY(-5px);
 }
 
-.achievements-container .achievements-block {
-    width: 100%; 
-    text-align: left;
-}
-
 .resume-block h3 {
     color: var(--primary-color);
     font-size: 1.6rem;
-    margin-top: 0;
     margin-bottom: 25px;
     padding-bottom: 10px;
     border-bottom: 2px solid var(--highlight-color);
@@ -89,11 +83,9 @@
     list-style: none;
     padding-left: 20px;
     position: relative;
-    margin-top: 20px;
     flex-grow: 1;
 }
 
-/* Vertical line */
 .timeline::before {
     content: '';
     position: absolute;
@@ -110,7 +102,6 @@
     padding-left: 25px;
 }
 
-/* Dot marker */
 .timeline > li::before {
     content: '';
     position: absolute;
@@ -132,25 +123,12 @@
     margin-bottom: 8px;
 }
 
-/* Nested lists in timeline */
-.timeline ul {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 10px;
-}
-
-.timeline ul li {
-    font-size: 0.95rem;
-    margin-bottom: 5px;
-    color: var(--text-color);
-    opacity: 0.9;
-}
-
 /* --- Awards List --- */
 .awards-list {
     list-style: none;
     padding: 0;
     margin-top: 20px;
+    text-align: left;
 }
 
 .awards-list li {
@@ -159,29 +137,68 @@
     border-bottom: 1px dashed var(--border-color);
 }
 
-.awards-list li strong {
-    color: var(--primary-color);
-    display: block;
-    margin-top: 10px;
+/* --- Proficiency Progress Bars --- */
+.proficiency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+    text-align: left;
 }
 
-/* --- Buttons --- */
-.certificates-button {
-    background-color: var(--primary-color);
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 15px;
-    font-weight: 600;
-    transition: background 0.3s ease;
-    display: inline-block;
-    text-decoration: none;
+.proficiency-block {
+    background: var(--block-background);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
 }
 
-.certificates-button:hover {
-    background-color: var(--link-hover-color);
+.bar-item {
+    margin-bottom: 20px;
+}
+
+.bar-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.progress-line {
+    height: 10px;
+    width: 100%;
+    background: var(--background-color);
+    border-radius: 10px;
+    position: relative;
+}
+
+.progress-line span {
+    height: 100%;
+    background: var(--primary-color);
+    position: absolute;
+    border-radius: 10px;
+}
+
+/* --- Learning Roadmap --- */
+.roadmap-list {
+    list-style: none;
+    padding: 0;
+}
+
+.roadmap-list li {
+    background: var(--background-color);
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 500;
+}
+
+.roadmap-list li i {
+    color: var(--highlight-color);
 }
 
 /* --- Skills Grid --- */
@@ -198,24 +215,12 @@
     border-radius: 12px;
     border: 1px solid var(--border-color);
     box-shadow: var(--box-shadow);
-    display: flex;
-    flex-direction: column;
     text-align: left;
-}
-
-.skills-category h4 {
-    color: var(--primary-color);
-    font-size: 1.4rem;
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--highlight-color);
-    padding-bottom: 10px;
 }
 
 .skills-list {
     list-style: none;
     padding: 0;
-    margin: 0;
-    flex-grow: 1;
 }
 
 .skills-list li {
@@ -243,11 +248,6 @@
     font-weight: bold;
     cursor: pointer;
     border-radius: 6px;
-    transition: opacity 0.3s;
-}
-
-.view-more-button:hover {
-    opacity: 0.9;
 }
 
 .hidden-skill {
@@ -260,19 +260,25 @@
 .hidden-skill.expanded {
     max-height: 1000px;
     opacity: 1;
-    margin-top: 0;
+}
+
+/* --- Buttons --- */
+.certificates-button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: 600;
+    display: inline-block;
+    text-decoration: none;
 }
 
 /* === Responsive === */
 @media (max-width: 992px) {
     .resume-flex-container {
         flex-direction: column;
-    }
-}
-
-@media (max-width: 600px) {
-    .resume-section-container h2, 
-    .skills-container h2 {
-        font-size: 1.8rem;
     }
 }

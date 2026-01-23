@@ -1,32 +1,34 @@
-/*
- * PortfolioProjectStyle.css
- * Dedicated styles for the Projects page (PortfolioProject.html)
- * Uses variables from PortfolioStyle.css
+/* * PortfolioProjectStyle.css
+ * Combined styles for Coding Projects and Creative Gallery 
  */
 
-/* ---------------------------------------------------- */
-/* === PROJECTS SECTION STYLES === */
-/* ---------------------------------------------------- */
-.project-section {
-    padding: 60px 20px;
+/* --- SECTION LAYOUTS --- */
+.project-section, .pixel-art-section {
+    padding: 80px 20px;
     background-color: var(--background-color);
     transition: background-color 0.3s ease;
 }
 
-.project-container {
+.pixel-art-section {
+    background-color: var(--block-background); /* Subtle contrast from the coding section */
+    border-top: 1px solid var(--border-color);
+}
+
+.container {
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .project-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .project-title {
     color: var(--primary-color);
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 800;
+    margin-bottom: 10px;
 }
 
 .project-subtitle {
@@ -35,19 +37,19 @@
     opacity: 0.8;
 }
 
-/* === Toolbar === */
+/* --- TOOLBAR (LIST/GRID TOGGLE) --- */
 .project-toolbar {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 30px;
-    gap: 10px;
+    gap: 12px;
 }
 
 .project-toolbar button {
     background-color: var(--block-background);
     color: var(--text-color);
     border: 1px solid var(--border-color);
-    padding: 10px 18px;
+    padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
@@ -58,9 +60,10 @@
     background-color: var(--primary-color);
     border-color: var(--primary-color);
     color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* === Project List (Default List View) === */
+/* --- CODING PROJECTS (DEFAULT LIST VIEW) --- */
 .project-list {
     display: flex;
     flex-direction: column;
@@ -69,12 +72,12 @@
 
 .project-card {
     background-color: var(--block-background);
-    border-radius: 12px;
-    padding: 20px;
+    border-radius: 15px;
+    padding: 25px;
     border: 1px solid var(--border-color);
     box-shadow: var(--box-shadow);
     display: flex;
-    gap: 25px;
+    gap: 30px;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -87,11 +90,11 @@
 .project-img-container {
     margin: 0;
     flex-shrink: 0;
-    width: 280px;
-    height: 180px;
+    width: 320px;
+    height: 200px;
     overflow: hidden;
-    border-radius: 8px;
-    background-color: #eee;
+    border-radius: 10px;
+    background-color: #ddd;
 }
 
 .project-img {
@@ -106,40 +109,45 @@
 
 .project-info h3 {
     color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
 }
 
 .project-info p {
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-.project-link, .project-status {
+.project-link {
     display: inline-block;
-    padding: 8px 20px;
+    padding: 10px 25px;
     background-color: var(--secondary-color);
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.project-status {
-    background-color: #666; /* Gray for confidential/locked */
-    cursor: not-allowed;
+    transition: background 0.3s;
 }
 
 .project-link:hover {
     background-color: var(--primary-color);
 }
 
-/* === Grid View Modifier === */
+.project-status {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #777;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* --- GRID VIEW MODIFIER (CODING PROJECTS) --- */
 .project-list.grid-view {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 30px;
 }
 
@@ -150,18 +158,99 @@
 
 .project-list.grid-view .project-img-container {
     width: 100%;
-    height: 200px;
+    height: 220px;
 }
 
-/* === Responsive === */
-@media (max-width: 768px) {
+/* --- CREATIVE GALLERY (PIXEL ART) --- */
+.pixel-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.pixel-card-art {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    background: var(--block-background);
+    border: 1px solid var(--border-color);
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+.pixel-card-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.pixel-card-art:hover {
+    transform: scale(1.03);
+}
+
+.art-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    color: white;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pixel-card-art:hover .art-overlay {
+    opacity: 1;
+}
+
+/* --- SHIMMER ANIMATION & PLACEHOLDERS --- */
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.pixel-card-art.placeholder {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite linear;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+
+body.dark-mode .pixel-card-art.placeholder {
+    background: linear-gradient(90deg, #1e1e1e 25%, #2a2a2a 50%, #1e1e1e 75%);
+    background-size: 200% 100%;
+}
+
+.shimmer-content {
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0.6;
+}
+
+.shimmer-content i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 900px) {
     .project-card {
         flex-direction: column;
     }
     .project-img-container {
         width: 100%;
     }
-    .project-toolbar {
-        justify-content: center;
-    }
+}
+
+@media (max-width: 600px) {
+    .project-title { font-size: 2rem; }
+    .project-toolbar { justify-content: center; }
 }
